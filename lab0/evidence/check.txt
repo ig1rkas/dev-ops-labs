@@ -1,0 +1,7 @@
+Started: 2026-10-27T09:33:51.182667+00:00
+PASS registration writes a user to PostgreSQL: lab-93619e4ac8c4458dafdd029684c927ec@example.org
+PASS a fresh HTTP request reads the saved user: 2
+PASS login reads the same account from PostgreSQL
+PASS frontend catalog API returns subjects: 21
+PASS React frontend is served
+All checks passed

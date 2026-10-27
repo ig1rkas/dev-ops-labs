@@ -1,0 +1,6 @@
+ id |                      email                       |      full_name       |  role   
+----+--------------------------------------------------+----------------------+---------
+  2 | lab-93619e4ac8c4458dafdd029684c927ec@example.org | Лабораторный студент | student
+  1 | admin@example.org                                | Администратор idioma | admin
+(2 rows)
+

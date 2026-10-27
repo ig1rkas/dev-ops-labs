@@ -1,0 +1,822 @@
+{
+  ".dockerignore": {
+    "source_sha256": "e67b3dd5e31ab3d99c30c7cc47994ec0300f1cb66c76caa533cf39fdf4a6ca9f",
+    "lab_sha256": "377a4bda0a686c24b33a6172dd33306b2357c00da31de327bf3b324b8bb030a7"
+  },
+  "Dockerfile": {
+    "source_sha256": "5005db67dbaa0167acd40aa0878b2febe0804f20cb6ca2dfdad75c3b06ebb03e",
+    "lab_sha256": "0a9e06adc839ceb7fb93b71fb86606de6ae0c82b1941ed777e5adf1126091078"
+  },
+  "frontend.conf": {
+    "source_sha256": null,
+    "lab_sha256": "27eeb466dae8016dddbf6bb6daa208fbac59ae608679ffb992b7b3ac5cbc5796"
+  },
+  "src/backend/app/__init__.py": {
+    "source_sha256": "625f1a971002cb3a41981a49cc967e55eabc1c5c20774537a50005a5d541a9fd",
+    "lab_sha256": "625f1a971002cb3a41981a49cc967e55eabc1c5c20774537a50005a5d541a9fd"
+  },
+  "src/backend/app/api/__init__.py": {
+    "source_sha256": "239551391c4593dc7a09750463d3e76ca16270ee8112af0279a96dc45aff65af",
+    "lab_sha256": "239551391c4593dc7a09750463d3e76ca16270ee8112af0279a96dc45aff65af"
+  },
+  "src/backend/app/api/routes.py": {
+    "source_sha256": "aa210d0efb160914bd5395e218802eb7618f67251f231597e461f961b52458c8",
+    "lab_sha256": "aa210d0efb160914bd5395e218802eb7618f67251f231597e461f961b52458c8"
+  },
+  "src/backend/app/cli/__init__.py": {
+    "source_sha256": "71a2a41b3eee56e3c726565ffd9de0b60b4a854cb0d9053697bf26979dbc33d5",
+    "lab_sha256": "71a2a41b3eee56e3c726565ffd9de0b60b4a854cb0d9053697bf26979dbc33d5"
+  },
+  "src/backend/app/cli/add_teacher.py": {
+    "source_sha256": "32506222044ac4851f3efeecf32ca04e313614e889a887bfdcc004c0656eacc5",
+    "lab_sha256": "32506222044ac4851f3efeecf32ca04e313614e889a887bfdcc004c0656eacc5"
+  },
+  "src/backend/app/cli/add_teacher_subject.py": {
+    "source_sha256": "6c2905dd3e064bf30365545c6757b5c6bb0a705813e832556a31276134b2e30a",
+    "lab_sha256": "6c2905dd3e064bf30365545c6757b5c6bb0a705813e832556a31276134b2e30a"
+  },
+  "src/backend/app/core/__init__.py": {
+    "source_sha256": "dbaaf901b70a2ad2c0827bd383d8ed53cf4266cc11860c20f3a27d060b854065",
+    "lab_sha256": "dbaaf901b70a2ad2c0827bd383d8ed53cf4266cc11860c20f3a27d060b854065"
+  },
+  "src/backend/app/core/config.py": {
+    "source_sha256": "43ec0c0e82e676d4f6d165dad884ebfa0d669ad5a978ed79cd15c76929f2385f",
+    "lab_sha256": "43ec0c0e82e676d4f6d165dad884ebfa0d669ad5a978ed79cd15c76929f2385f"
+  },
+  "src/backend/app/db/__init__.py": {
+    "source_sha256": "365890f9493f11c8dbed44666f270bcc9d787688bae51a891ecc56f0b1a7eb23",
+    "lab_sha256": "365890f9493f11c8dbed44666f270bcc9d787688bae51a891ecc56f0b1a7eb23"
+  },
+  "src/backend/app/db/base.py": {
+    "source_sha256": "987edfd9dfe38b2c49492c7d1a4e774015d16b72e2281b018e4160be6b47d560",
+    "lab_sha256": "987edfd9dfe38b2c49492c7d1a4e774015d16b72e2281b018e4160be6b47d560"
+  },
+  "src/backend/app/db/schema.py": {
+    "source_sha256": "092dfcb84645e46beb0a78db0bc4873992de7059296113d55bd5eef7f494df4c",
+    "lab_sha256": "092dfcb84645e46beb0a78db0bc4873992de7059296113d55bd5eef7f494df4c"
+  },
+  "src/backend/app/db/session.py": {
+    "source_sha256": "c22bc73cfa9ac0b48337d9ace3a51bf7b6d0bc0ffcb719289ce38d857ba11669",
+    "lab_sha256": "c22bc73cfa9ac0b48337d9ace3a51bf7b6d0bc0ffcb719289ce38d857ba11669"
+  },
+  "src/backend/app/main.py": {
+    "source_sha256": "706e6835b18baf82fa3c3498e46fce02fca96416d1c1969a0d9042064285d748",
+    "lab_sha256": "12f3a5da80c540c76730da5493011cc6b6336138f396cc8365d87e9c72ad577e"
+  },
+  "src/backend/app/models/__init__.py": {
+    "source_sha256": "e271d148c2e840e0576c0f2142c73f7d55e7c2a2461a452c298cf777bda08b90",
+    "lab_sha256": "e271d148c2e840e0576c0f2142c73f7d55e7c2a2461a452c298cf777bda08b90"
+  },
+  "src/backend/app/models/auth_token.py": {
+    "source_sha256": "0fce82ec632104eb1808842ade2cf03dd9ba3ddc07436abc8d997f49bc978f3e",
+    "lab_sha256": "0fce82ec632104eb1808842ade2cf03dd9ba3ddc07436abc8d997f49bc978f3e"
+  },
+  "src/backend/app/models/chat.py": {
+    "source_sha256": "b8be8e87102df0c964c6c4bc1a4401989bb4a3204ee51beae6c9b0c8f826c20b",
+    "lab_sha256": "b8be8e87102df0c964c6c4bc1a4401989bb4a3204ee51beae6c9b0c8f826c20b"
+  },
+  "src/backend/app/models/course.py": {
+    "source_sha256": "f782bde4d652859e7e9b376a0401e387ca2d096b6802e8e235921aacedaa24e7",
+    "lab_sha256": "f782bde4d652859e7e9b376a0401e387ca2d096b6802e8e235921aacedaa24e7"
+  },
+  "src/backend/app/models/learning.py": {
+    "source_sha256": "d4b1b6662758a209fac6d2c101b339691d0b989fa4aa21362f9915c8789e7619",
+    "lab_sha256": "d4b1b6662758a209fac6d2c101b339691d0b989fa4aa21362f9915c8789e7619"
+  },
+  "src/backend/app/models/student_dashboard.py": {
+    "source_sha256": "6495f1bfff907f446fac1697a928550020e008537a3fc13257e4687dba717db0",
+    "lab_sha256": "6495f1bfff907f446fac1697a928550020e008537a3fc13257e4687dba717db0"
+  },
+  "src/backend/app/models/subject.py": {
+    "source_sha256": "af8972c3f69fc830843c31a305eab0797ae63917f94eb4212aff17baba9f9944",
+    "lab_sha256": "af8972c3f69fc830843c31a305eab0797ae63917f94eb4212aff17baba9f9944"
+  },
+  "src/backend/app/models/teacher.py": {
+    "source_sha256": "225b8d0f0352187895122cba54eab86644b0311e82e90b52e22ed30a69f31da8",
+    "lab_sha256": "225b8d0f0352187895122cba54eab86644b0311e82e90b52e22ed30a69f31da8"
+  },
+  "src/backend/app/models/teacher_application.py": {
+    "source_sha256": "405d8cfb52bc058205147a4c74ca5b15368d8c43d148c6c8a9a45caf39233294",
+    "lab_sha256": "405d8cfb52bc058205147a4c74ca5b15368d8c43d148c6c8a9a45caf39233294"
+  },
+  "src/backend/app/models/teacher_subject.py": {
+    "source_sha256": "639f57bbe2b8bf539da54ed19b233018d5759f7c56e053bf162114525ef2cbe2",
+    "lab_sha256": "639f57bbe2b8bf539da54ed19b233018d5759f7c56e053bf162114525ef2cbe2"
+  },
+  "src/backend/app/models/telegram.py": {
+    "source_sha256": "c04538eb0a9e7a631c7264ac5c4b5ad446d4bc48b1627213eb2a2a472134987b",
+    "lab_sha256": "c04538eb0a9e7a631c7264ac5c4b5ad446d4bc48b1627213eb2a2a472134987b"
+  },
+  "src/backend/app/models/user.py": {
+    "source_sha256": "dc5b780b46e9d66b40c6f920c91955fde44a7bb63f70ba120dea7ec14178bbf5",
+    "lab_sha256": "dc5b780b46e9d66b40c6f920c91955fde44a7bb63f70ba120dea7ec14178bbf5"
+  },
+  "src/backend/app/schemas/__init__.py": {
+    "source_sha256": "79c1497b45a93c4dd3d89987f4f3f972f63f665d18ab3157e471121826f825ec",
+    "lab_sha256": "79c1497b45a93c4dd3d89987f4f3f972f63f665d18ab3157e471121826f825ec"
+  },
+  "src/backend/app/schemas/admin.py": {
+    "source_sha256": "7b137caa23547ec505e0a7d6257ec32a18878ec2a5d310e4d8e0bf69ce465979",
+    "lab_sha256": "7b137caa23547ec505e0a7d6257ec32a18878ec2a5d310e4d8e0bf69ce465979"
+  },
+  "src/backend/app/schemas/auth.py": {
+    "source_sha256": "7f3ac352ccf92d372099efd90b98bac376e706d7f6adc5f1a186ddd727c67475",
+    "lab_sha256": "7f3ac352ccf92d372099efd90b98bac376e706d7f6adc5f1a186ddd727c67475"
+  },
+  "src/backend/app/schemas/course.py": {
+    "source_sha256": "193f605c6fecdff8d3fe67c74f9f5c622621934c48fa53345d4e91ded994e217",
+    "lab_sha256": "193f605c6fecdff8d3fe67c74f9f5c622621934c48fa53345d4e91ded994e217"
+  },
+  "src/backend/app/schemas/dashboard.py": {
+    "source_sha256": "5c99da6c1cbdd974ab8ec422030e23ab6c02b0cd8c475b26f0c838a05312d707",
+    "lab_sha256": "5c99da6c1cbdd974ab8ec422030e23ab6c02b0cd8c475b26f0c838a05312d707"
+  },
+  "src/backend/app/schemas/learning.py": {
+    "source_sha256": "aa54b0dbcae6dbb01c591a18d4db15a6540d1298d907a0326790c92fbc86fd59",
+    "lab_sha256": "aa54b0dbcae6dbb01c591a18d4db15a6540d1298d907a0326790c92fbc86fd59"
+  },
+  "src/backend/app/schemas/messaging.py": {
+    "source_sha256": "6d1092d0643009a23a755d0fb6d7cfec5091f4d0c5e38fb6907b6fc443f5a9f4",
+    "lab_sha256": "6d1092d0643009a23a755d0fb6d7cfec5091f4d0c5e38fb6907b6fc443f5a9f4"
+  },
+  "src/backend/app/schemas/subject.py": {
+    "source_sha256": "c1d3ebd0e8bba0b0ed9c45441f95f8092ec5c29b33ac8d9ffe091e94e7cc9885",
+    "lab_sha256": "c1d3ebd0e8bba0b0ed9c45441f95f8092ec5c29b33ac8d9ffe091e94e7cc9885"
+  },
+  "src/backend/app/schemas/teacher.py": {
+    "source_sha256": "8dd7b92f850e9b7867015abc2f81b8e6ab7f45bfe7bbc2e1796e4e5bf8f2c803",
+    "lab_sha256": "8dd7b92f850e9b7867015abc2f81b8e6ab7f45bfe7bbc2e1796e4e5bf8f2c803"
+  },
+  "src/backend/app/schemas/teacher_application.py": {
+    "source_sha256": "a9981b2ff9ec66a864eb0fcda719dfc308f59222ea0306a319cf40aa4059353b",
+    "lab_sha256": "a9981b2ff9ec66a864eb0fcda719dfc308f59222ea0306a319cf40aa4059353b"
+  },
+  "src/backend/app/schemas/telegram.py": {
+    "source_sha256": "ef0a80bb003ce4685396be2acd34c619c8bf3307c87a92951defaae212e83b68",
+    "lab_sha256": "ef0a80bb003ce4685396be2acd34c619c8bf3307c87a92951defaae212e83b68"
+  },
+  "src/backend/app/services/__init__.py": {
+    "source_sha256": "5ee368b8b403ddb926e38792d6c660d7a6ec88ea5bd628ded82a91e52931d2f1",
+    "lab_sha256": "5ee368b8b403ddb926e38792d6c660d7a6ec88ea5bd628ded82a91e52931d2f1"
+  },
+  "src/backend/app/services/admin.py": {
+    "source_sha256": "09f48c35ff6f14fa5de8689bd96fc70fa296cfa8920b4b14dbf9194e4fb9673c",
+    "lab_sha256": "09f48c35ff6f14fa5de8689bd96fc70fa296cfa8920b4b14dbf9194e4fb9673c"
+  },
+  "src/backend/app/services/admin_students.py": {
+    "source_sha256": "6a2068c84ebc1262926012c8a5f3eebed67ad3d28c8a5c7902b6aff2c7a34009",
+    "lab_sha256": "6a2068c84ebc1262926012c8a5f3eebed67ad3d28c8a5c7902b6aff2c7a34009"
+  },
+  "src/backend/app/services/auth.py": {
+    "source_sha256": "fbc56a4d0acd8c0fb85769de61c9b88aff10c7fed17f9e847efecefec3de1c3c",
+    "lab_sha256": "fbc56a4d0acd8c0fb85769de61c9b88aff10c7fed17f9e847efecefec3de1c3c"
+  },
+  "src/backend/app/services/catalog.py": {
+    "source_sha256": "769a068208a3d59f8aad89eff68be09082e4f9254d35e4554c333160af0abf11",
+    "lab_sha256": "769a068208a3d59f8aad89eff68be09082e4f9254d35e4554c333160af0abf11"
+  },
+  "src/backend/app/services/courses.py": {
+    "source_sha256": "76003a49fc233c8e67dcccdf676fc549cbb0360ae9eb1fd1d8d700d2a4b832f0",
+    "lab_sha256": "76003a49fc233c8e67dcccdf676fc549cbb0360ae9eb1fd1d8d700d2a4b832f0"
+  },
+  "src/backend/app/services/dashboard.py": {
+    "source_sha256": "8370c8f164d2120a70e48aacb42a7ea2a55f745492eb6b2c2738899c30f070d3",
+    "lab_sha256": "8370c8f164d2120a70e48aacb42a7ea2a55f745492eb6b2c2738899c30f070d3"
+  },
+  "src/backend/app/services/google_calendar.py": {
+    "source_sha256": "247d1ce1d2af57694248a8751f626f3f7fb5541a56afb99a66bd4d9b5e502fb4",
+    "lab_sha256": "247d1ce1d2af57694248a8751f626f3f7fb5541a56afb99a66bd4d9b5e502fb4"
+  },
+  "src/backend/app/services/learning.py": {
+    "source_sha256": "31e913368a369a24263881431d483f672070f2c3235e7763f00ad85feee31674",
+    "lab_sha256": "31e913368a369a24263881431d483f672070f2c3235e7763f00ad85feee31674"
+  },
+  "src/backend/app/services/messaging.py": {
+    "source_sha256": "16b2ad96e021648a9daadc6114eb10b19d74a74a3e713b4b579dda0d68e6115d",
+    "lab_sha256": "16b2ad96e021648a9daadc6114eb10b19d74a74a3e713b4b579dda0d68e6115d"
+  },
+  "src/backend/app/services/teacher_applications.py": {
+    "source_sha256": "7286267d7f7ca0a5c2528c84c59222dab057a637e24336b5c7878f281fd20458",
+    "lab_sha256": "7286267d7f7ca0a5c2528c84c59222dab057a637e24336b5c7878f281fd20458"
+  },
+  "src/backend/app/services/teacher_subjects.py": {
+    "source_sha256": "c6366d17d0f4faabaff755eef89394e0cd8000ad32fc21edda9a0c1e4b78dcf3",
+    "lab_sha256": "c6366d17d0f4faabaff755eef89394e0cd8000ad32fc21edda9a0c1e4b78dcf3"
+  },
+  "src/backend/app/services/telegram.py": {
+    "source_sha256": "1d8da0a9350da9c907f091c3721c16ebcd0218e6219375e0c332fee6a8c00be3",
+    "lab_sha256": "1d8da0a9350da9c907f091c3721c16ebcd0218e6219375e0c332fee6a8c00be3"
+  },
+  "src/backend/app/telegram_auth.py": {
+    "source_sha256": "0ab044e59a9e7cf1e13c928efee99f773bb5dec375f82e715b8ca367e2eb9868",
+    "lab_sha256": "0ab044e59a9e7cf1e13c928efee99f773bb5dec375f82e715b8ca367e2eb9868"
+  },
+  "src/backend/app/tg.py": {
+    "source_sha256": "e4b36d189c650bcca03e005e236a96a846a44fa1ee2fd76338ad0f4042830a07",
+    "lab_sha256": "e4b36d189c650bcca03e005e236a96a846a44fa1ee2fd76338ad0f4042830a07"
+  },
+  "src/backend/requirements.txt": {
+    "source_sha256": "ddc3a8f8a0b5a61a0c364da7bb99529e24b69b4242567ce2e1310e4ee33ff93c",
+    "lab_sha256": "ddc3a8f8a0b5a61a0c364da7bb99529e24b69b4242567ce2e1310e4ee33ff93c"
+  },
+  "src/backend/tests/test_telegram_photos.py": {
+    "source_sha256": "7cbdab4aa195c6469376ea48eead1225a5986eafed342396f271043449e53a5f",
+    "lab_sha256": "7cbdab4aa195c6469376ea48eead1225a5986eafed342396f271043449e53a5f"
+  },
+  "src/backend/tests/test_telegram_reactions.py": {
+    "source_sha256": "3e4c4658ab1ac229de7226a27220dbe54532cc8ca2972575fa8406bcfa4d200b",
+    "lab_sha256": "3e4c4658ab1ac229de7226a27220dbe54532cc8ca2972575fa8406bcfa4d200b"
+  },
+  "src/frontend/index.html": {
+    "source_sha256": "ec032582c797e5c6691478499d3dfaa0f6d81be141b9084e7948e6908bee7a18",
+    "lab_sha256": "ec032582c797e5c6691478499d3dfaa0f6d81be141b9084e7948e6908bee7a18"
+  },
+  "src/frontend/package-lock.json": {
+    "source_sha256": "3b33ccf1310ab146483974de30725d7cfed273f27835fe7f5a47707ad50af739",
+    "lab_sha256": "3b33ccf1310ab146483974de30725d7cfed273f27835fe7f5a47707ad50af739"
+  },
+  "src/frontend/package.json": {
+    "source_sha256": "cce29a2a6ff60e923ccb512f3f836286dfc174a25b6682389d5e0f586e5315bd",
+    "lab_sha256": "cce29a2a6ff60e923ccb512f3f836286dfc174a25b6682389d5e0f586e5315bd"
+  },
+  "src/frontend/public/README.md": {
+    "source_sha256": "022c1dae627fcb50d0f60dedde1098b4c92ec4e57651a1021477a50eabc6423a",
+    "lab_sha256": "022c1dae627fcb50d0f60dedde1098b4c92ec4e57651a1021477a50eabc6423a"
+  },
+  "src/frontend/public/android-chrome-192x192.png": {
+    "source_sha256": "232fe69a5a3c4e715dbabb819650799da9094a36d175c726f1704938c3c30c98",
+    "lab_sha256": "232fe69a5a3c4e715dbabb819650799da9094a36d175c726f1704938c3c30c98"
+  },
+  "src/frontend/public/android-chrome-512x512.png": {
+    "source_sha256": "de8dac298badbee4a58846fc9b86c8a95600e7212cfbee6fac8f0a581ef1c267",
+    "lab_sha256": "de8dac298badbee4a58846fc9b86c8a95600e7212cfbee6fac8f0a581ef1c267"
+  },
+  "src/frontend/public/apple-touch-icon.png": {
+    "source_sha256": "b22856f584b9241e0d0676184fc5a2b40db9212735064871761c69f1df2b2160",
+    "lab_sha256": "b22856f584b9241e0d0676184fc5a2b40db9212735064871761c69f1df2b2160"
+  },
+  "src/frontend/public/favicon-128x128.png": {
+    "source_sha256": "9c572b4e2e630a000ebb60b34083fdfacdcca612c6c9e49b0014da8db7253144",
+    "lab_sha256": "9c572b4e2e630a000ebb60b34083fdfacdcca612c6c9e49b0014da8db7253144"
+  },
+  "src/frontend/public/favicon-16x16.png": {
+    "source_sha256": "5f419035c3ae09bbcb213bc100d9f5c5c62cf39f0118c4169eb41452f4e50938",
+    "lab_sha256": "5f419035c3ae09bbcb213bc100d9f5c5c62cf39f0118c4169eb41452f4e50938"
+  },
+  "src/frontend/public/favicon-256x256.png": {
+    "source_sha256": "412c2a2c273bd5b3e1d881a45e27e4b719d4738873f556459818938430f9dfa7",
+    "lab_sha256": "412c2a2c273bd5b3e1d881a45e27e4b719d4738873f556459818938430f9dfa7"
+  },
+  "src/frontend/public/favicon-32x32.png": {
+    "source_sha256": "eda2d232824143ec4796e06e223f2b661def0b9045558a7b911a3172e943dd07",
+    "lab_sha256": "eda2d232824143ec4796e06e223f2b661def0b9045558a7b911a3172e943dd07"
+  },
+  "src/frontend/public/favicon-48x48.png": {
+    "source_sha256": "d9b4c97882c950fa8607bd0e451ec57d7e7d09d6b76b1bafe106b5e64fa82d1d",
+    "lab_sha256": "d9b4c97882c950fa8607bd0e451ec57d7e7d09d6b76b1bafe106b5e64fa82d1d"
+  },
+  "src/frontend/public/favicon-64x64.png": {
+    "source_sha256": "ff690381847b10f9f2ea93e530e434fea85698fcf1fbe2927405a0ac034edc1f",
+    "lab_sha256": "ff690381847b10f9f2ea93e530e434fea85698fcf1fbe2927405a0ac034edc1f"
+  },
+  "src/frontend/public/favicon-html-snippet.txt": {
+    "source_sha256": "eb7ad9c78b7b8e45832601e262cccda002e3caaf1a79c822ffd23b25421e43ed",
+    "lab_sha256": "eb7ad9c78b7b8e45832601e262cccda002e3caaf1a79c822ffd23b25421e43ed"
+  },
+  "src/frontend/public/favicon-transparent-192x192.png": {
+    "source_sha256": "06d31f0721acefa7c31538c5193e94b35395c94669ebca11427f4fabb73ae0a4",
+    "lab_sha256": "06d31f0721acefa7c31538c5193e94b35395c94669ebca11427f4fabb73ae0a4"
+  },
+  "src/frontend/public/favicon-transparent-512x512.png": {
+    "source_sha256": "6bfcf2b2fde13474c9e5409eba5f5a89e22be2f26b58d071eedb16082c130691",
+    "lab_sha256": "6bfcf2b2fde13474c9e5409eba5f5a89e22be2f26b58d071eedb16082c130691"
+  },
+  "src/frontend/public/favicon.ico": {
+    "source_sha256": "35a34b17c5d8d1fbe5edb718cc1b004132154f8c698a668a4fa33445a443aa7b",
+    "lab_sha256": "35a34b17c5d8d1fbe5edb718cc1b004132154f8c698a668a4fa33445a443aa7b"
+  },
+  "src/frontend/public/favicon.svg": {
+    "source_sha256": "c7ceeb875543a67dbd74ae641d6b2e4e0f6cba5395257c586fb114f8d5cb204b",
+    "lab_sha256": "c7ceeb875543a67dbd74ae641d6b2e4e0f6cba5395257c586fb114f8d5cb204b"
+  },
+  "src/frontend/public/preview.png": {
+    "source_sha256": "0119b9755fa549d997002da77906942e250cbbf23159217f363d47175ae6060f",
+    "lab_sha256": "0119b9755fa549d997002da77906942e250cbbf23159217f363d47175ae6060f"
+  },
+  "src/frontend/public/site.webmanifest": {
+    "source_sha256": "ca31a09eb557d8d6c199d005003b25aa94349b9a8e846dd3ffdfcbf162c66bdf",
+    "lab_sha256": "ca31a09eb557d8d6c199d005003b25aa94349b9a8e846dd3ffdfcbf162c66bdf"
+  },
+  "src/frontend/public/source/panda_head_source.png": {
+    "source_sha256": "6d8cdc5d884cdf4f1d610e8b4ef70d03e55313b62b44926f225120c0780e3332",
+    "lab_sha256": "6d8cdc5d884cdf4f1d610e8b4ef70d03e55313b62b44926f225120c0780e3332"
+  },
+  "src/frontend/src/App.jsx": {
+    "source_sha256": "bddb2dd7e0a04859f010d3132b4d360762141390ebfa1638ac68c72248dbb605",
+    "lab_sha256": "bddb2dd7e0a04859f010d3132b4d360762141390ebfa1638ac68c72248dbb605"
+  },
+  "src/frontend/src/assets/icons/01_button_primary.png": {
+    "source_sha256": "900a8c0a95d91b8a68b62130deb6867a22a3e64cde4ee08fe398e5f9c943caa1",
+    "lab_sha256": "900a8c0a95d91b8a68b62130deb6867a22a3e64cde4ee08fe398e5f9c943caa1"
+  },
+  "src/frontend/src/assets/icons/01_icon_home.png": {
+    "source_sha256": "ccf982bb463130b71bbb1797e3b7c4c7d3bd31f1ee20cf61a2e50a588488eeca",
+    "lab_sha256": "ccf982bb463130b71bbb1797e3b7c4c7d3bd31f1ee20cf61a2e50a588488eeca"
+  },
+  "src/frontend/src/assets/icons/01_icon_math_sigma.png": {
+    "source_sha256": "2e08903cd7d62ea9fe39a48d2de725d635786a842609ff167fbda5913ac2c515",
+    "lab_sha256": "2e08903cd7d62ea9fe39a48d2de725d635786a842609ff167fbda5913ac2c515"
+  },
+  "src/frontend/src/assets/icons/01_top_navigation_bar.png": {
+    "source_sha256": "cced4bbb0f46759d6585d97200ee35889c5a93f9e52d299d0c272bf6b0865bd0",
+    "lab_sha256": "cced4bbb0f46759d6585d97200ee35889c5a93f9e52d299d0c272bf6b0865bd0"
+  },
+  "src/frontend/src/assets/icons/02_button_small.png": {
+    "source_sha256": "7a12ab5f31c70ae5154f5356955fe7b2f9344c1f087924ae63dae66d61445a65",
+    "lab_sha256": "7a12ab5f31c70ae5154f5356955fe7b2f9344c1f087924ae63dae66d61445a65"
+  },
+  "src/frontend/src/assets/icons/02_icon_language_ab.png": {
+    "source_sha256": "2261e91e9553464f4fb038420299bcf21b8458919c846087f23b4e339c696f4a",
+    "lab_sha256": "2261e91e9553464f4fb038420299bcf21b8458919c846087f23b4e339c696f4a"
+  },
+  "src/frontend/src/assets/icons/02_icon_search.png": {
+    "source_sha256": "eee855b126447aa05a4766c4772bcdc27016fd04a97eb6fb676dae40f70497a8",
+    "lab_sha256": "eee855b126447aa05a4766c4772bcdc27016fd04a97eb6fb676dae40f70497a8"
+  },
+  "src/frontend/src/assets/icons/02_top_right_action_panel.png": {
+    "source_sha256": "53d8bd7c45de1fee6970f8c30da89ab7c5dc10492e9e97bd304db8c67e6ac711",
+    "lab_sha256": "53d8bd7c45de1fee6970f8c30da89ab7c5dc10492e9e97bd304db8c67e6ac711"
+  },
+  "src/frontend/src/assets/icons/03_button_round_mascot.png": {
+    "source_sha256": "96162d05a36455c63eccf3dea15f7b0571b51982979d7f8bc0ec05c2e5777b06",
+    "lab_sha256": "96162d05a36455c63eccf3dea15f7b0571b51982979d7f8bc0ec05c2e5777b06"
+  },
+  "src/frontend/src/assets/icons/03_icon_books_stack.png": {
+    "source_sha256": "577719f2a56dede1e3255e935ebbe3f144a91010d3ae007e93c564a003a0142a",
+    "lab_sha256": "577719f2a56dede1e3255e935ebbe3f144a91010d3ae007e93c564a003a0142a"
+  },
+  "src/frontend/src/assets/icons/03_icon_filter.png": {
+    "source_sha256": "d2509f602f172180df81b26c6f768d978c77c0986986fe41798239cafe76f560",
+    "lab_sha256": "d2509f602f172180df81b26c6f768d978c77c0986986fe41798239cafe76f560"
+  },
+  "src/frontend/src/assets/icons/03_left_sidebar_menu.png": {
+    "source_sha256": "1b81e4cf2d681f294866aaa7918029155080efa5caefed4f3f9eb7c958d71eeb",
+    "lab_sha256": "1b81e4cf2d681f294866aaa7918029155080efa5caefed4f3f9eb7c958d71eeb"
+  },
+  "src/frontend/src/assets/icons/04_horizontal_controls_row.png": {
+    "source_sha256": "15001299822e60155a2310c9bbc74b96481a97080344c88991ebd79e22f1cec9",
+    "lab_sha256": "15001299822e60155a2310c9bbc74b96481a97080344c88991ebd79e22f1cec9"
+  },
+  "src/frontend/src/assets/icons/04_icon_chemistry_flask.png": {
+    "source_sha256": "ac3b03187a9c2d4680152b9b8028a0a41c0d4bfe3d7cfae3bbf2177edd506d85",
+    "lab_sha256": "ac3b03187a9c2d4680152b9b8028a0a41c0d4bfe3d7cfae3bbf2177edd506d85"
+  },
+  "src/frontend/src/assets/icons/04_icon_menu.png": {
+    "source_sha256": "4bae00edab9b81d7910e70e9aa53bfb60e6efca86045ff97104b1b92bb033659",
+    "lab_sha256": "4bae00edab9b81d7910e70e9aa53bfb60e6efca86045ff97104b1b92bb033659"
+  },
+  "src/frontend/src/assets/icons/04_tab_active.png": {
+    "source_sha256": "a9b3bb7013092cb1d5c1bda5e0f9fbd997a73f99029e89c91fc837eccc308711",
+    "lab_sha256": "a9b3bb7013092cb1d5c1bda5e0f9fbd997a73f99029e89c91fc837eccc308711"
+  },
+  "src/frontend/src/assets/icons/05_feature_cards_row.png": {
+    "source_sha256": "c4474c96a76a8a045b28a13e8354f0fea65dbc575062e968fe03d8c52b384239",
+    "lab_sha256": "c4474c96a76a8a045b28a13e8354f0fea65dbc575062e968fe03d8c52b384239"
+  },
+  "src/frontend/src/assets/icons/05_icon_close.png": {
+    "source_sha256": "22d2b84b6362c6c7bd917590439af107d1d461410f4e27766c80fbbbf4567cea",
+    "lab_sha256": "22d2b84b6362c6c7bd917590439af107d1d461410f4e27766c80fbbbf4567cea"
+  },
+  "src/frontend/src/assets/icons/05_icon_physics_atom.png": {
+    "source_sha256": "98ed69e655e12bc63341bcfdadc5ea75ba207c94ebc4d7a20655266f53f3dc8e",
+    "lab_sha256": "98ed69e655e12bc63341bcfdadc5ea75ba207c94ebc4d7a20655266f53f3dc8e"
+  },
+  "src/frontend/src/assets/icons/05_tab_inactive.png": {
+    "source_sha256": "9c4dc8524b4b61307d92c19282bd43d4dd2645d99318390e4d32606c9c3ed8a0",
+    "lab_sha256": "9c4dc8524b4b61307d92c19282bd43d4dd2645d99318390e4d32606c9c3ed8a0"
+  },
+  "src/frontend/src/assets/icons/06_button_secondary.png": {
+    "source_sha256": "d9fb1c00dd5d67274decc09500973747f17cab6fec4e767d8f564b71ca21209d",
+    "lab_sha256": "d9fb1c00dd5d67274decc09500973747f17cab6fec4e767d8f564b71ca21209d"
+  },
+  "src/frontend/src/assets/icons/06_icon_arrow_right.png": {
+    "source_sha256": "84bd331c08d86cc3d20d1b7695c483ba4d21faf9f4f7fca91901661c3e37e3ff",
+    "lab_sha256": "84bd331c08d86cc3d20d1b7695c483ba4d21faf9f4f7fca91901661c3e37e3ff"
+  },
+  "src/frontend/src/assets/icons/06_icon_biology_dna.png": {
+    "source_sha256": "457049f5f0ecdedf7960bdcc14873fb7f9560528a62e0c8770082cb045ebb5e3",
+    "lab_sha256": "457049f5f0ecdedf7960bdcc14873fb7f9560528a62e0c8770082cb045ebb5e3"
+  },
+  "src/frontend/src/assets/icons/06_main_wide_banner.png": {
+    "source_sha256": "f4fd60c4e98e90788be29058d5bded972f163b153e07f6207bc9b0898c48b53a",
+    "lab_sha256": "f4fd60c4e98e90788be29058d5bded972f163b153e07f6207bc9b0898c48b53a"
+  },
+  "src/frontend/src/assets/icons/07_content_cards_row.png": {
+    "source_sha256": "ef6fb99f65bfaf4a2df20894566f8f0357a14f5b2ed76bf4b5caa81ea19c3e78",
+    "lab_sha256": "ef6fb99f65bfaf4a2df20894566f8f0357a14f5b2ed76bf4b5caa81ea19c3e78"
+  },
+  "src/frontend/src/assets/icons/07_icon_arrow_left.png": {
+    "source_sha256": "1814ef8624ae48fbd3271acfdfdd9245166f0fdb5351082b1f2915690e0de57b",
+    "lab_sha256": "1814ef8624ae48fbd3271acfdfdd9245166f0fdb5351082b1f2915690e0de57b"
+  },
+  "src/frontend/src/assets/icons/07_icon_history_column.png": {
+    "source_sha256": "933159fa7280c6cd35230d49c2971537ed50ed042762d4f26797c0214a4dc16e",
+    "lab_sha256": "933159fa7280c6cd35230d49c2971537ed50ed042762d4f26797c0214a4dc16e"
+  },
+  "src/frontend/src/assets/icons/07_input_search.png": {
+    "source_sha256": "4e0dbcd967a8ad49a95054e6bb1ca09f04fdba103ce2883d3d9d403aa21d7b23",
+    "lab_sha256": "4e0dbcd967a8ad49a95054e6bb1ca09f04fdba103ce2883d3d9d403aa21d7b23"
+  },
+  "src/frontend/src/assets/icons/08_icon_chevron_down.png": {
+    "source_sha256": "89d19e75106949963bcad6426aaace5b3a87de8be270cb735a9c8b160d2da51b",
+    "lab_sha256": "89d19e75106949963bcad6426aaace5b3a87de8be270cb735a9c8b160d2da51b"
+  },
+  "src/frontend/src/assets/icons/08_icon_geography_globe.png": {
+    "source_sha256": "22252aab65167e2531a9c908ec935573b997d205099198c2767a45399143c2c3",
+    "lab_sha256": "22252aab65167e2531a9c908ec935573b997d205099198c2767a45399143c2c3"
+  },
+  "src/frontend/src/assets/icons/08_icon_home.png": {
+    "source_sha256": "958cb07951f867db7db55aa1be2a04a39b696c29d0665e564fad478abb61f2f2",
+    "lab_sha256": "958cb07951f867db7db55aa1be2a04a39b696c29d0665e564fad478abb61f2f2"
+  },
+  "src/frontend/src/assets/icons/08_select_dropdown.png": {
+    "source_sha256": "2c26e0b66ac75981fe7d1c668f5169306816530e3ba643cdf3577f311060cf79",
+    "lab_sha256": "2c26e0b66ac75981fe7d1c668f5169306816530e3ba643cdf3577f311060cf79"
+  },
+  "src/frontend/src/assets/icons/08_small_action_widget.png": {
+    "source_sha256": "f9a456dc5fdb38f9e641b0ebc36f3a571610f212de6f58da8e111da7e4076215",
+    "lab_sha256": "f9a456dc5fdb38f9e641b0ebc36f3a571610f212de6f58da8e111da7e4076215"
+  },
+  "src/frontend/src/assets/icons/09_button_ghost.png": {
+    "source_sha256": "c0eaec6260018b90201cc6aa1979f64f5b436c4f84f626ed96f0df947dc05667",
+    "lab_sha256": "c0eaec6260018b90201cc6aa1979f64f5b436c4f84f626ed96f0df947dc05667"
+  },
+  "src/frontend/src/assets/icons/09_icon_calendar.png": {
+    "source_sha256": "a1341ebfd2dbdf0f7e630b5f4432ffa14a1758cf2f4a85010cf917ecfebbb6a4",
+    "lab_sha256": "a1341ebfd2dbdf0f7e630b5f4432ffa14a1758cf2f4a85010cf917ecfebbb6a4"
+  },
+  "src/frontend/src/assets/icons/09_icon_programming_code.png": {
+    "source_sha256": "de055eb96f67f746103bf541139000527cd6e85070758d49d7136f9e521d7e4c",
+    "lab_sha256": "de055eb96f67f746103bf541139000527cd6e85070758d49d7136f9e521d7e4c"
+  },
+  "src/frontend/src/assets/icons/09_icon_search.png": {
+    "source_sha256": "979c2f66ba95c3c91e9fe854b33cfbdd8082c72bc847f58e42c13a697f7466ac",
+    "lab_sha256": "979c2f66ba95c3c91e9fe854b33cfbdd8082c72bc847f58e42c13a697f7466ac"
+  },
+  "src/frontend/src/assets/icons/09_right_mascot_widget.png": {
+    "source_sha256": "3bbc4628a439cb4836befeb046b7f4a7921dc75990298b3400fa81331fde402b",
+    "lab_sha256": "3bbc4628a439cb4836befeb046b7f4a7921dc75990298b3400fa81331fde402b"
+  },
+  "src/frontend/src/assets/icons/10_bottom_left_dashboard_card.png": {
+    "source_sha256": "795abada05b7bc6fea7026b6ee220ee3a2e18d55aec10dca00bd6302a446cc9a",
+    "lab_sha256": "795abada05b7bc6fea7026b6ee220ee3a2e18d55aec10dca00bd6302a446cc9a"
+  },
+  "src/frontend/src/assets/icons/10_icon_clock.png": {
+    "source_sha256": "8eb6b70818f9085d13bb7a9d649ea08879a1c0a4cd13b2f2a982ff5d1842b5fb",
+    "lab_sha256": "8eb6b70818f9085d13bb7a9d649ea08879a1c0a4cd13b2f2a982ff5d1842b5fb"
+  },
+  "src/frontend/src/assets/icons/10_icon_filter.png": {
+    "source_sha256": "5e29bd686de54f78230e76b7948c2b7e2dbda693c297a4286380d4eb0521452b",
+    "lab_sha256": "5e29bd686de54f78230e76b7948c2b7e2dbda693c297a4286380d4eb0521452b"
+  },
+  "src/frontend/src/assets/icons/10_icon_terminal.png": {
+    "source_sha256": "03499c570b22049816698e6f4291514fb0ead8e9dfe71622fd28a8850734b0df",
+    "lab_sha256": "03499c570b22049816698e6f4291514fb0ead8e9dfe71622fd28a8850734b0df"
+  },
+  "src/frontend/src/assets/icons/10_input_text.png": {
+    "source_sha256": "2bba96eca05039eb91f0be9e34fb330f47433080af438dac2925db8f320fdb32",
+    "lab_sha256": "2bba96eca05039eb91f0be9e34fb330f47433080af438dac2925db8f320fdb32"
+  },
+  "src/frontend/src/assets/icons/11_bottom_center_dashboard_card.png": {
+    "source_sha256": "e7ad753cc17ecb2a6b2e0a7be7172003b9ff8e5b324bea8d33d23b1efe21b147",
+    "lab_sha256": "e7ad753cc17ecb2a6b2e0a7be7172003b9ff8e5b324bea8d33d23b1efe21b147"
+  },
+  "src/frontend/src/assets/icons/11_icon_bell.png": {
+    "source_sha256": "06be1c5662ff28eaa9c451e0d1467ef466ae97a788bf8bcdb09d38e0bcedbecb",
+    "lab_sha256": "06be1c5662ff28eaa9c451e0d1467ef466ae97a788bf8bcdb09d38e0bcedbecb"
+  },
+  "src/frontend/src/assets/icons/11_icon_web_code_window.png": {
+    "source_sha256": "3840456ac6d9f04ec949aaa1d268c0f1b59a9dba2382cbde1791c27cd8cd5856",
+    "lab_sha256": "3840456ac6d9f04ec949aaa1d268c0f1b59a9dba2382cbde1791c27cd8cd5856"
+  },
+  "src/frontend/src/assets/icons/11_input_password.png": {
+    "source_sha256": "70ae71ae677c71f7e89643234bd9a90a123a4e4052766f6c50a41ce65b9d314e",
+    "lab_sha256": "70ae71ae677c71f7e89643234bd9a90a123a4e4052766f6c50a41ce65b9d314e"
+  },
+  "src/frontend/src/assets/icons/12_icon_chat.png": {
+    "source_sha256": "1ef9e7a7dd078929a311554175dc943e889074c01db8e3c6a876eb7e7b02fde9",
+    "lab_sha256": "1ef9e7a7dd078929a311554175dc943e889074c01db8e3c6a876eb7e7b02fde9"
+  },
+  "src/frontend/src/assets/icons/12_icon_gamepad.png": {
+    "source_sha256": "9cdafcb1b35f5a448dff0705e564504b926f7800db678242182166cb19ea3036",
+    "lab_sha256": "9cdafcb1b35f5a448dff0705e564504b926f7800db678242182166cb19ea3036"
+  },
+  "src/frontend/src/assets/icons/12_textarea.png": {
+    "source_sha256": "28133ee5b7e1eeacffa8a5e0aeef2802b7f977576ce422e90e929aa6fde4af78",
+    "lab_sha256": "28133ee5b7e1eeacffa8a5e0aeef2802b7f977576ce422e90e929aa6fde4af78"
+  },
+  "src/frontend/src/assets/icons/13_checkbox_checked.png": {
+    "source_sha256": "2a4937b480ed67e9b75d2cf41ba657ba337030120073803f2111d2b9c9fce363",
+    "lab_sha256": "2a4937b480ed67e9b75d2cf41ba657ba337030120073803f2111d2b9c9fce363"
+  },
+  "src/frontend/src/assets/icons/13_icon_network_nodes.png": {
+    "source_sha256": "44d7958ccb4a88200d2ddc95ddba328628cebda0f523ee0b476dc4885e5f2535",
+    "lab_sha256": "44d7958ccb4a88200d2ddc95ddba328628cebda0f523ee0b476dc4885e5f2535"
+  },
+  "src/frontend/src/assets/icons/13_icon_profile.png": {
+    "source_sha256": "352cb47eb79b826d7efdc4abc6d296c88e547901952fa97817e1c1ee17430cad",
+    "lab_sha256": "352cb47eb79b826d7efdc4abc6d296c88e547901952fa97817e1c1ee17430cad"
+  },
+  "src/frontend/src/assets/icons/14_checkbox_empty.png": {
+    "source_sha256": "e0ed276b03e91ea94872f3029ae193b759c25c4bfb657206191515282a5913c0",
+    "lab_sha256": "e0ed276b03e91ea94872f3029ae193b759c25c4bfb657206191515282a5913c0"
+  },
+  "src/frontend/src/assets/icons/14_icon_group.png": {
+    "source_sha256": "18eec3744f0863cf433bdc98a100f242dd975402c5fd8792b7a1178b32c046bd",
+    "lab_sha256": "18eec3744f0863cf433bdc98a100f242dd975402c5fd8792b7a1178b32c046bd"
+  },
+  "src/frontend/src/assets/icons/14_icon_robot_ai.png": {
+    "source_sha256": "b70a0a3d5a21e853b1357744289e53d7033cd7f3bd3ed043169fc31410cc65bb",
+    "lab_sha256": "b70a0a3d5a21e853b1357744289e53d7033cd7f3bd3ed043169fc31410cc65bb"
+  },
+  "src/frontend/src/assets/icons/15_icon_ege_exam_sheet.png": {
+    "source_sha256": "b44f6e703453385f023f22f43f4a884fd78803ffb831d4f44bc172e92e700428",
+    "lab_sha256": "b44f6e703453385f023f22f43f4a884fd78803ffb831d4f44bc172e92e700428"
+  },
+  "src/frontend/src/assets/icons/15_icon_rating_stars.png": {
+    "source_sha256": "0b245f095286d1f9380b70ee0d21501f8a8d11dd092823ea1a19d811d62bd8ad",
+    "lab_sha256": "0b245f095286d1f9380b70ee0d21501f8a8d11dd092823ea1a19d811d62bd8ad"
+  },
+  "src/frontend/src/assets/icons/15_radio_selected.png": {
+    "source_sha256": "31e78ff81e850af2c19fa82b50f87581a18cb39b9b0fe5669add59acd855d2b2",
+    "lab_sha256": "31e78ff81e850af2c19fa82b50f87581a18cb39b9b0fe5669add59acd855d2b2"
+  },
+  "src/frontend/src/assets/icons/16_icon_heart.png": {
+    "source_sha256": "7dc3d08b3d963f771aa04516825f9c36be08cce2462596442d9388c6defc47a8",
+    "lab_sha256": "7dc3d08b3d963f771aa04516825f9c36be08cce2462596442d9388c6defc47a8"
+  },
+  "src/frontend/src/assets/icons/16_icon_oge_shield.png": {
+    "source_sha256": "b651cb17c1ee1a9051c1345b3bd20849a8cedde9695d0a1c80680bc0ea77e802",
+    "lab_sha256": "b651cb17c1ee1a9051c1345b3bd20849a8cedde9695d0a1c80680bc0ea77e802"
+  },
+  "src/frontend/src/assets/icons/16_radio_empty.png": {
+    "source_sha256": "75040406e3a3675ec18a7dbb2ddbc1a22d555cd5c892664aa4db855f4f6727c3",
+    "lab_sha256": "75040406e3a3675ec18a7dbb2ddbc1a22d555cd5c892664aa4db855f4f6727c3"
+  },
+  "src/frontend/src/assets/icons/17_icon_check.png": {
+    "source_sha256": "ea0f480cf21fd2469d6992256f7480bff02963a90374a5460628bfc7849d4161",
+    "lab_sha256": "ea0f480cf21fd2469d6992256f7480bff02963a90374a5460628bfc7849d4161"
+  },
+  "src/frontend/src/assets/icons/17_icon_ielts_globe.png": {
+    "source_sha256": "433ac5a0f466040fa62962934e6acca193ca5bf278d53dadc3933ca2a4db309f",
+    "lab_sha256": "433ac5a0f466040fa62962934e6acca193ca5bf278d53dadc3933ca2a4db309f"
+  },
+  "src/frontend/src/assets/icons/17_toggle_on.png": {
+    "source_sha256": "9749c19e180d3758b9fd6fa7be10fe3d46b144ff2e4b69eb8906d80799cb7698",
+    "lab_sha256": "9749c19e180d3758b9fd6fa7be10fe3d46b144ff2e4b69eb8906d80799cb7698"
+  },
+  "src/frontend/src/assets/icons/18_icon_play.png": {
+    "source_sha256": "2b82a5c139a31ac12e6c2858b86f15d8976b89641b837ac33ca698b9daf912cc",
+    "lab_sha256": "2b82a5c139a31ac12e6c2858b86f15d8976b89641b837ac33ca698b9daf912cc"
+  },
+  "src/frontend/src/assets/icons/18_icon_toefl_certificate.png": {
+    "source_sha256": "d30e30e6993b321fa60a8c9c760d6839c70e3f5c2126e9ddd9462b57b7c32940",
+    "lab_sha256": "d30e30e6993b321fa60a8c9c760d6839c70e3f5c2126e9ddd9462b57b7c32940"
+  },
+  "src/frontend/src/assets/icons/18_toggle_off.png": {
+    "source_sha256": "6962e508771a7230690c58542bc579f01ae8e159bab89c2990222e8c002636dd",
+    "lab_sha256": "6962e508771a7230690c58542bc579f01ae8e159bab89c2990222e8c002636dd"
+  },
+  "src/frontend/src/assets/icons/19_chip_active.png": {
+    "source_sha256": "7724ad8cd7d993919917472dc3c3b08799c2034eb849dd570dc1350b04ec0292",
+    "lab_sha256": "7724ad8cd7d993919917472dc3c3b08799c2034eb849dd570dc1350b04ec0292"
+  },
+  "src/frontend/src/assets/icons/19_icon_download.png": {
+    "source_sha256": "be7e5a359316db0d28e277d387f74e6823776745da8af44e9299a2a9fcb43321",
+    "lab_sha256": "be7e5a359316db0d28e277d387f74e6823776745da8af44e9299a2a9fcb43321"
+  },
+  "src/frontend/src/assets/icons/19_icon_hsk_chinese.png": {
+    "source_sha256": "147eafb8574f2865ca9e55d99f523cedf8edc4cfb2a7fa7e537684849418ca85",
+    "lab_sha256": "147eafb8574f2865ca9e55d99f523cedf8edc4cfb2a7fa7e537684849418ca85"
+  },
+  "src/frontend/src/assets/icons/20_chip_inactive.png": {
+    "source_sha256": "a13e550f02b4d19144e89344c98e4ec2769cce9a9c227f2ddaad81844fad518e",
+    "lab_sha256": "a13e550f02b4d19144e89344c98e4ec2769cce9a9c227f2ddaad81844fad518e"
+  },
+  "src/frontend/src/assets/icons/20_icon_japanese_sakura.png": {
+    "source_sha256": "babe660ff9e770f0cb82fad181509162184a5c26c6d3994fcfdef5cbc1b77363",
+    "lab_sha256": "babe660ff9e770f0cb82fad181509162184a5c26c6d3994fcfdef5cbc1b77363"
+  },
+  "src/frontend/src/assets/icons/20_icon_upload.png": {
+    "source_sha256": "0219e49c06509bc1c20a353c8e42297fc14d6b2c2791ce60f98cb09e738f7142",
+    "lab_sha256": "0219e49c06509bc1c20a353c8e42297fc14d6b2c2791ce60f98cb09e738f7142"
+  },
+  "src/frontend/src/assets/icons/21_icon_dele_badge.png": {
+    "source_sha256": "e5a8785703c279ae541e4b929483fecd200c47db8777479411f8873f368371f3",
+    "lab_sha256": "e5a8785703c279ae541e4b929483fecd200c47db8777479411f8873f368371f3"
+  },
+  "src/frontend/src/assets/icons/21_icon_settings.png": {
+    "source_sha256": "57565b833a109e9be9d521602de66733b1e3594319394c7e954b4630c8a30ae0",
+    "lab_sha256": "57565b833a109e9be9d521602de66733b1e3594319394c7e954b4630c8a30ae0"
+  },
+  "src/frontend/src/assets/icons/21_pagination_1.png": {
+    "source_sha256": "3e2a94bfa93ed03d1250b8d5b2571a318a7746fdc54099d6314659c177fbb23b",
+    "lab_sha256": "3e2a94bfa93ed03d1250b8d5b2571a318a7746fdc54099d6314659c177fbb23b"
+  },
+  "src/frontend/src/assets/icons/22_icon_certificate_ribbon.png": {
+    "source_sha256": "49a76111d731d744d58f3b08355e2e7a3d0d82e45cf704688f809b72fb0008ab",
+    "lab_sha256": "49a76111d731d744d58f3b08355e2e7a3d0d82e45cf704688f809b72fb0008ab"
+  },
+  "src/frontend/src/assets/icons/22_icon_document.png": {
+    "source_sha256": "be83a0000a04e43a1032ed52a87ea069c34afb3f94d9d8f1ea1810bf563aced0",
+    "lab_sha256": "be83a0000a04e43a1032ed52a87ea069c34afb3f94d9d8f1ea1810bf563aced0"
+  },
+  "src/frontend/src/assets/icons/22_pagination_2.png": {
+    "source_sha256": "e2ea0d4b8837875386503525b7746e0be1e38b5e123cc3ddb546126fb3b95eec",
+    "lab_sha256": "e2ea0d4b8837875386503525b7746e0be1e38b5e123cc3ddb546126fb3b95eec"
+  },
+  "src/frontend/src/assets/icons/23_icon_book.png": {
+    "source_sha256": "5327bf39fd65170916eb956a996187bac05c793c9965a6cae87bed5770c83cbb",
+    "lab_sha256": "5327bf39fd65170916eb956a996187bac05c793c9965a6cae87bed5770c83cbb"
+  },
+  "src/frontend/src/assets/icons/23_icon_target_arrow.png": {
+    "source_sha256": "5fc893c83fd44fbf950d8ee220377dba4fd1226ffa0522d41d584e17616c5e10",
+    "lab_sha256": "5fc893c83fd44fbf950d8ee220377dba4fd1226ffa0522d41d584e17616c5e10"
+  },
+  "src/frontend/src/assets/icons/23_pagination_3.png": {
+    "source_sha256": "1a09f7c671b849d1273074d29b91fdb9f09043f87d2a03335d16d57373343359",
+    "lab_sha256": "1a09f7c671b849d1273074d29b91fdb9f09043f87d2a03335d16d57373343359"
+  },
+  "src/frontend/src/assets/icons/24_icon_graduation_cap.png": {
+    "source_sha256": "c14cfaf44c59adea1d61166bc7c8ddb5f05a90f694de7a45db26215f747ba916",
+    "lab_sha256": "c14cfaf44c59adea1d61166bc7c8ddb5f05a90f694de7a45db26215f747ba916"
+  },
+  "src/frontend/src/assets/icons/24_icon_growth_chart.png": {
+    "source_sha256": "408d8d2a3c469a9dfca083a285a624b8054002f9817d0de8e8e7fb8ebc41717a",
+    "lab_sha256": "408d8d2a3c469a9dfca083a285a624b8054002f9817d0de8e8e7fb8ebc41717a"
+  },
+  "src/frontend/src/assets/icons/24_pagination_dots.png": {
+    "source_sha256": "1322a79946a91d9269f687cd4c1652ff75b7a21739b9efd3bead11dd98cec48a",
+    "lab_sha256": "1322a79946a91d9269f687cd4c1652ff75b7a21739b9efd3bead11dd98cec48a"
+  },
+  "src/frontend/src/assets/icons/25_pagination_10.png": {
+    "source_sha256": "8b2548a08dae38b212fc4d7aa7203961a3a4a3ba960cf44b735f159e65a259ba",
+    "lab_sha256": "8b2548a08dae38b212fc4d7aa7203961a3a4a3ba960cf44b735f159e65a259ba"
+  },
+  "src/frontend/src/assets/icons/26_pagination_next.png": {
+    "source_sha256": "faf25b1544cdf14379acb03f0341e21a38080e596275b0eaa9bcfbf4573d5b05",
+    "lab_sha256": "faf25b1544cdf14379acb03f0341e21a38080e596275b0eaa9bcfbf4573d5b05"
+  },
+  "src/frontend/src/assets/icons/27_breadcrumb_home.png": {
+    "source_sha256": "c1b1fddb5fea73cedf4b50b94d52d2a7ca88e5bebc388689a45f0df7c7a93974",
+    "lab_sha256": "c1b1fddb5fea73cedf4b50b94d52d2a7ca88e5bebc388689a45f0df7c7a93974"
+  },
+  "src/frontend/src/assets/icons/28_breadcrumb_arrow_1.png": {
+    "source_sha256": "b2313c243eb55fd4eb829f62b683de43232749f74c478d775b267f3c0b8a5b0a",
+    "lab_sha256": "b2313c243eb55fd4eb829f62b683de43232749f74c478d775b267f3c0b8a5b0a"
+  },
+  "src/frontend/src/assets/icons/29_breadcrumb_category.png": {
+    "source_sha256": "7cf75348bf2b85d2d1c53054654b6bcd01a3de6bab1d2f44a8e5385bac085754",
+    "lab_sha256": "7cf75348bf2b85d2d1c53054654b6bcd01a3de6bab1d2f44a8e5385bac085754"
+  },
+  "src/frontend/src/assets/icons/30_breadcrumb_arrow_2.png": {
+    "source_sha256": "be61695bf5d39796380ea5fd36da453a7a5da43002dbc0a90cd8f4c08421c77a",
+    "lab_sha256": "be61695bf5d39796380ea5fd36da453a7a5da43002dbc0a90cd8f4c08421c77a"
+  },
+  "src/frontend/src/assets/icons/31_breadcrumb_subcategory.png": {
+    "source_sha256": "2fb076845bf86604bc9f8e505dfd64bfb36e2c35e318592e64516cd8e1c20961",
+    "lab_sha256": "2fb076845bf86604bc9f8e505dfd64bfb36e2c35e318592e64516cd8e1c20961"
+  },
+  "src/frontend/src/assets/icons/32_breadcrumb_arrow_3.png": {
+    "source_sha256": "aa35921d83be21558efe5deac29889273bd23578d859709d0cc6b773ebde770f",
+    "lab_sha256": "aa35921d83be21558efe5deac29889273bd23578d859709d0cc6b773ebde770f"
+  },
+  "src/frontend/src/assets/icons/33_breadcrumb_current_page.png": {
+    "source_sha256": "091e2a12251fec9de9ba4dd59580df901f4bf2c1947678a89054b49836420616",
+    "lab_sha256": "091e2a12251fec9de9ba4dd59580df901f4bf2c1947678a89054b49836420616"
+  },
+  "src/frontend/src/assets/icons/34_badge_count_5.png": {
+    "source_sha256": "aa1e90902e24085fcd426a7b48a36d9a9f0fd7a55ae06fbb5a3d8abbb8734a95",
+    "lab_sha256": "aa1e90902e24085fcd426a7b48a36d9a9f0fd7a55ae06fbb5a3d8abbb8734a95"
+  },
+  "src/frontend/src/assets/icons/35_badge_new.png": {
+    "source_sha256": "8da0c0a15687f62c053a8bb63fc4248081ceee1f3eb1463875378a3aa317f02a",
+    "lab_sha256": "8da0c0a15687f62c053a8bb63fc4248081ceee1f3eb1463875378a3aa317f02a"
+  },
+  "src/frontend/src/assets/icons/36_badge_default.png": {
+    "source_sha256": "17043e52c4cf6d0ef6854ed320a757c5f71f70777e6bea208cf382712f26fb78",
+    "lab_sha256": "17043e52c4cf6d0ef6854ed320a757c5f71f70777e6bea208cf382712f26fb78"
+  },
+  "src/frontend/src/assets/icons/37_badge_success.png": {
+    "source_sha256": "0f9172eda9a1a0cdd013110a3be5267f48e0b06046339b3267bee5212c2f63e4",
+    "lab_sha256": "0f9172eda9a1a0cdd013110a3be5267f48e0b06046339b3267bee5212c2f63e4"
+  },
+  "src/frontend/src/assets/icons/38_badge_info.png": {
+    "source_sha256": "65a8d1d327ecb498481ff487b48df4fed6e058912f90ef106c111c5365ca1aae",
+    "lab_sha256": "65a8d1d327ecb498481ff487b48df4fed6e058912f90ef106c111c5365ca1aae"
+  },
+  "src/frontend/src/assets/icons/39_status_warning.png": {
+    "source_sha256": "269c3d339dc37c367088b59af43cfc3820f88fe58fe189f65e86e326505e9dfe",
+    "lab_sha256": "269c3d339dc37c367088b59af43cfc3820f88fe58fe189f65e86e326505e9dfe"
+  },
+  "src/frontend/src/assets/icons/40_status_error.png": {
+    "source_sha256": "7ef837deb0c5c0cfa62fb3835c2be536d00c6b3c6eafd37616d0d5c0a5d3fc18",
+    "lab_sha256": "7ef837deb0c5c0cfa62fb3835c2be536d00c6b3c6eafd37616d0d5c0a5d3fc18"
+  },
+  "src/frontend/src/assets/icons/41_status_pending.png": {
+    "source_sha256": "dfc309dd39804550fdbd705ca00899795f85ec920d1825d41bc4392e67721e06",
+    "lab_sha256": "dfc309dd39804550fdbd705ca00899795f85ec920d1825d41bc4392e67721e06"
+  },
+  "src/frontend/src/assets/icons/42_status_approved.png": {
+    "source_sha256": "a637d26a5b8b337b26e96498a8d10b74e478eaaba1634a2388413be5908db60b",
+    "lab_sha256": "a637d26a5b8b337b26e96498a8d10b74e478eaaba1634a2388413be5908db60b"
+  },
+  "src/frontend/src/assets/icons/43_status_disabled.png": {
+    "source_sha256": "7c1b76225e864a1eaed3c616a4407032e57abe3789be6e8ba2f05a4214bfabd8",
+    "lab_sha256": "7c1b76225e864a1eaed3c616a4407032e57abe3789be6e8ba2f05a4214bfabd8"
+  },
+  "src/frontend/src/assets/icons/messages.png": {
+    "source_sha256": "e27b39de16fad98b7884d1e37a07878d8619ab48071299f9b339df1046e873df",
+    "lab_sha256": "e27b39de16fad98b7884d1e37a07878d8619ab48071299f9b339df1046e873df"
+  },
+  "src/frontend/src/assets/logo/logo.png": {
+    "source_sha256": "a0b244b7ec7a89e2950e36245c4bee8f82b1c0018c02d56df628b95f85a72cb3",
+    "lab_sha256": "a0b244b7ec7a89e2950e36245c4bee8f82b1c0018c02d56df628b95f85a72cb3"
+  },
+  "src/frontend/src/assets/panda/01_panda_waving.png": {
+    "source_sha256": "129cc0b01f4ba542671c415d4687a75eaaa9c7858146e209e6ad407eca9d719e",
+    "lab_sha256": "129cc0b01f4ba542671c415d4687a75eaaa9c7858146e209e6ad407eca9d719e"
+  },
+  "src/frontend/src/assets/panda/02_panda_laptop.png": {
+    "source_sha256": "1037a0e32072738334bfc7e7a0ad1a2e0183af4467e7c3e4b928cb7301c9ea16",
+    "lab_sha256": "1037a0e32072738334bfc7e7a0ad1a2e0183af4467e7c3e4b928cb7301c9ea16"
+  },
+  "src/frontend/src/assets/panda/03_panda_reading_book.png": {
+    "source_sha256": "c61cded16ebd049ef4884654ffa09514032b5c6f6b446d5aa638e25e8a9abe9a",
+    "lab_sha256": "c61cded16ebd049ef4884654ffa09514032b5c6f6b446d5aa638e25e8a9abe9a"
+  },
+  "src/frontend/src/assets/panda/04_panda_pointing.png": {
+    "source_sha256": "64cd445b253232868061aa3627ebdcb6b0888c9a775b84a2f90fc7938641b1c2",
+    "lab_sha256": "64cd445b253232868061aa3627ebdcb6b0888c9a775b84a2f90fc7938641b1c2"
+  },
+  "src/frontend/src/assets/panda/05_panda_headset.png": {
+    "source_sha256": "5b9f0c3ff259352f6fc2ea469fbc48e226b5ebaab40571c35d6699d0284b5e1c",
+    "lab_sha256": "5b9f0c3ff259352f6fc2ea469fbc48e226b5ebaab40571c35d6699d0284b5e1c"
+  },
+  "src/frontend/src/assets/panda/06_panda_certificate.png": {
+    "source_sha256": "63df30b23959f5ddcc295f1840f5fefe39709a1040e7032651d420ddef6f3611",
+    "lab_sha256": "63df30b23959f5ddcc295f1840f5fefe39709a1040e7032651d420ddef6f3611"
+  },
+  "src/frontend/src/assets/panda/07_panda_calendar.png": {
+    "source_sha256": "d803b094484380b563708c2cbcdf57b6f575251054d576991ce015338f22ff99",
+    "lab_sha256": "d803b094484380b563708c2cbcdf57b6f575251054d576991ce015338f22ff99"
+  },
+  "src/frontend/src/assets/panda/08_panda_backpack.png": {
+    "source_sha256": "4b5dbbba5a1454f5432cd1fd45ac27b6cc5c0686b5b1bc02c52ea2248b6b0217",
+    "lab_sha256": "4b5dbbba5a1454f5432cd1fd45ac27b6cc5c0686b5b1bc02c52ea2248b6b0217"
+  },
+  "src/frontend/src/assets/panda/09_panda_teacher_board.png": {
+    "source_sha256": "6771359aa9c8eda22edf33afded31ef5afa3899cf06447e12c66f24498d11a5a",
+    "lab_sha256": "6771359aa9c8eda22edf33afded31ef5afa3899cf06447e12c66f24498d11a5a"
+  },
+  "src/frontend/src/assets/panda/10_panda_trophy.png": {
+    "source_sha256": "3be5dffb4fc4f4b43216c340dc4de903154f92b1cc854d9a67ea3b8ec79c855e",
+    "lab_sha256": "3be5dffb4fc4f4b43216c340dc4de903154f92b1cc854d9a67ea3b8ec79c855e"
+  },
+  "src/frontend/src/assets/panda/reg_panda.png": {
+    "source_sha256": "f571938b520ca45f6f0fafe228e2c4fb43ec30aae41cd8bb728e4e83a7412bbd",
+    "lab_sha256": "f571938b520ca45f6f0fafe228e2c4fb43ec30aae41cd8bb728e4e83a7412bbd"
+  },
+  "src/frontend/src/components/Icon.jsx": {
+    "source_sha256": "0ed8dcd4638d7b8729941789e53166b727ad76c7fc304e19c3eaf624502d91f2",
+    "lab_sha256": "0ed8dcd4638d7b8729941789e53166b727ad76c7fc304e19c3eaf624502d91f2"
+  },
+  "src/frontend/src/components/Logo.jsx": {
+    "source_sha256": "a7a33ba38e2b581e23f6fa2afe736edf929ee1509ea925d9e4b2cae617d73c76",
+    "lab_sha256": "a7a33ba38e2b581e23f6fa2afe736edf929ee1509ea925d9e4b2cae617d73c76"
+  },
+  "src/frontend/src/components/RedPanda.jsx": {
+    "source_sha256": "79e4c1a5cd229edaaaa1d6778dda3d334edda2bb53f66e50fbb31854bc537143",
+    "lab_sha256": "79e4c1a5cd229edaaaa1d6778dda3d334edda2bb53f66e50fbb31854bc537143"
+  },
+  "src/frontend/src/data/siteData.js": {
+    "source_sha256": "0a8505ef0b4d211173079e333c1fc66e2ed0788c5848265cff52b42e7a11fbff",
+    "lab_sha256": "0a8505ef0b4d211173079e333c1fc66e2ed0788c5848265cff52b42e7a11fbff"
+  },
+  "src/frontend/src/main.jsx": {
+    "source_sha256": "e1a612429c82c548f24792921c02ef641d8add5efcd4aa7ac9e1574a6f06d692",
+    "lab_sha256": "e1a612429c82c548f24792921c02ef641d8add5efcd4aa7ac9e1574a6f06d692"
+  },
+  "src/frontend/src/services/api.js": {
+    "source_sha256": "abb74c9c15c7a9de6a6eb6ee3a110db1ae780138ba4b6462f26e47a311a341dc",
+    "lab_sha256": "abb74c9c15c7a9de6a6eb6ee3a110db1ae780138ba4b6462f26e47a311a341dc"
+  },
+  "src/frontend/src/styles.css": {
+    "source_sha256": "6e8e080cd7d1595c5f30bcb132e6d131c78896a92d0de2b450c0792bc9d9e43b",
+    "lab_sha256": "6e8e080cd7d1595c5f30bcb132e6d131c78896a92d0de2b450c0792bc9d9e43b"
+  },
+  "src/frontend/vite.config.js": {
+    "source_sha256": "bdb24b6065f3d77cbfc20b06f8acefa5efaf8f8ce80ee1a2d7b7212385829197",
+    "lab_sha256": "bdb24b6065f3d77cbfc20b06f8acefa5efaf8f8ce80ee1a2d7b7212385829197"
+  }
+}
