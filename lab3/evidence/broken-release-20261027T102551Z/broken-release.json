@@ -1,0 +1,19 @@
+{
+  "version": "broken-741afb00df17",
+  "source_sha256": "54ad7f063cd68adea582c96c9f85f1ff47479492e3672a7ae33bf4a926f482fa",
+  "published_at": "2026-10-27T10:19:38.150376+00:00",
+  "backend": {
+    "tag": "localhost:5003/idioma/backend:broken-741afb00df17",
+    "local_tag": "idioma-lab3/backend:broken-741afb00df17",
+    "digest_ref": "localhost:5003/idioma/backend@sha256:7911b40febd8d9478dd0d9ca9d7e1139a4cfb4b2ee2c19bf5cf930384a704dd2",
+    "image_id": "sha256:7911b40febd8d9478dd0d9ca9d7e1139a4cfb4b2ee2c19bf5cf930384a704dd2"
+  },
+  "frontend": {
+    "local_tag": "idioma-lab3/frontend:src-54ad7f063cd6-green-final",
+    "image_id": "sha256:5fa84a0cd28806d28223294b622f4299a840330be4f77ec064c2784393472d56",
+    "bytes": 118762207,
+    "tag": "localhost:5003/idioma/frontend:src-54ad7f063cd6-green-final",
+    "digest_ref": "localhost:5003/idioma/frontend@sha256:5fa84a0cd28806d28223294b622f4299a840330be4f77ec064c2784393472d56"
+  },
+  "purpose": "intentional local rollback exercise"
+}

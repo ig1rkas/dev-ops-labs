@@ -1,0 +1,35 @@
+name: Lab 3 manual rollback
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  packages: read
+concurrency:
+  group: idioma-lab3-deploy
+  cancel-in-progress: false
+jobs:
+  rollback:
+    runs-on: [self-hosted, idioma-lab3]
+    timeout-minutes: 10
+    env:
+      LAB3_STATE_DIR: ${{ github.workspace }}/../.idioma-lab3-state
+      LAB3_POSTGRES_PASSWORD: ${{ secrets.LAB3_POSTGRES_PASSWORD }}
+      LAB3_ADMIN_PASSWORD: ${{ secrets.LAB3_ADMIN_PASSWORD }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Authenticate to GHCR when selected
+        if: startsWith(vars.LAB3_REGISTRY, 'ghcr.io/')
+        env:
+          REGISTRY_USER: ${{ github.actor }}
+          REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: printf '%s' "$REGISTRY_TOKEN" | docker login ghcr.io -u "$REGISTRY_USER" --password-stdin
+      - name: Restore the previous working image digests and verify the live service
+        run: python3 lab3/ci.py rollback
+      - if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: lab3-rollback-${{ github.run_id }}
+          path: lab3/evidence/rollback-*
+          retention-days: 14

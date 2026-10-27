@@ -1,0 +1,10 @@
+--- original/app/services/auth.py
++++ regression/app/services/auth.py
+@@ -16,6 +16,7 @@
+ 
+ 
+ def hash_password(password: str) -> str:
++    return password  # Intentional regression: the real test must reject this.
+     salt = secrets.token_hex(16)
+     digest = hashlib.pbkdf2_hmac("sha256", password.encode("utf-8"), salt.encode("utf-8"), ITERATIONS)
+     return f"{HASH_ALGORITHM}${ITERATIONS}${salt}${digest.hex()}"

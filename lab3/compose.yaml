@@ -1,0 +1,65 @@
+name: idioma-lab3
+services:
+  db:
+    image: postgres:16.15-bookworm
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: idioma
+      POSTGRES_USER: idioma
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}
+    volumes: [pgdata:/var/lib/postgresql/data]
+    networks: [data]
+    mem_limit: 256m
+    cpus: 0.5
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U idioma -d idioma]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  backend:
+    image: ${BACKEND_IMAGE:?Set BACKEND_IMAGE}
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+psycopg://idioma:${POSTGRES_PASSWORD}@db:5432/idioma
+      AUTO_CREATE_TABLES: "true"
+      TELEGRAM_POLLING_ENABLED: "false"
+      TELEGRAM_MTPROTO_ENABLED: "false"
+      SEED_DEMO_ACCOUNTS: "false"
+      SEED_PUBLIC_TEACHER_ACCOUNTS: "false"
+      ADMIN_EMAIL: ci-admin@example.org
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set ADMIN_PASSWORD}
+      INSTANCE_ID: lab3-${RELEASE_VERSION:?Set RELEASE_VERSION}
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/readiness', timeout=2)"]
+      interval: 3s
+      timeout: 3s
+      retries: 10
+      start_period: 15s
+    networks: [edge, data]
+    depends_on:
+      db: {condition: service_healthy}
+    mem_limit: 512m
+    cpus: 0.5
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+  frontend:
+    image: ${FRONTEND_IMAGE:?Set FRONTEND_IMAGE}
+    restart: unless-stopped
+    ports: ["127.0.0.1:8083:8080"]
+    networks: [edge]
+    depends_on:
+      backend: {condition: service_healthy}
+    mem_limit: 128m
+    cpus: 0.5
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+networks:
+  edge:
+  data:
+    internal: true
+volumes:
+  pgdata:

@@ -9,3 +9,5 @@
 **/certs
 **/auth
 **/evidence
+**/.state
+**/.cache

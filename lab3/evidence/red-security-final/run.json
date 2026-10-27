@@ -1,0 +1,83 @@
+{
+  "id": "red-security-final",
+  "execution": "local",
+  "scenario": "vulnerable",
+  "started_at": "2026-10-27T10:19:15.021162+00:00",
+  "status": "failed",
+  "base_git_head": "6ee8d1b5463bd28f37466d5aad80a64cb3b25745",
+  "source_sha256": "54ad7f063cd68adea582c96c9f85f1ff47479492e3672a7ae33bf4a926f482fa",
+  "deployment_before": [
+    "159b04055bb7 localhost:5003/idioma/backend",
+    "1d81308a7063 localhost:5003/idioma/frontend",
+    "de2e1311323a postgres:16.15-bookworm"
+  ],
+  "registry": "localhost:5003/idioma",
+  "stages": {
+    "quality": {
+      "status": "passed",
+      "started_at": "2026-10-27T10:19:15.069494+00:00",
+      "finished_at": "2026-10-27T10:19:20.004344+00:00",
+      "seconds": 4.935
+    },
+    "build": {
+      "status": "passed",
+      "started_at": "2026-10-27T10:19:20.040777+00:00",
+      "finished_at": "2026-10-27T10:19:21.873723+00:00",
+      "seconds": 1.833
+    },
+    "scan": {
+      "status": "failed",
+      "started_at": "2026-10-27T10:19:21.894782+00:00",
+      "error": "Trivy CRITICAL gate rejected the image(s); publication and deployment are blocked",
+      "finished_at": "2026-10-27T10:19:29.020974+00:00",
+      "seconds": 7.126
+    },
+    "publish": {
+      "status": "skipped",
+      "reason": "scan failed"
+    },
+    "deploy": {
+      "status": "skipped",
+      "reason": "scan failed"
+    },
+    "verify": {
+      "status": "skipped",
+      "reason": "scan failed"
+    }
+  },
+  "version": "src-54ad7f063cd6-red-security-final",
+  "deployment_after": [
+    "159b04055bb7 localhost:5003/idioma/backend",
+    "1d81308a7063 localhost:5003/idioma/frontend",
+    "de2e1311323a postgres:16.15-bookworm"
+  ],
+  "updated_at": "2026-10-27T10:19:29.056595+00:00",
+  "images": {
+    "backend": {
+      "local_tag": "idioma-lab3/backend:src-54ad7f063cd6-red-security-final",
+      "image_id": "sha256:2813ba417d8dda4173397127a513c5224abb51141ce89ae3b9d18a405df1c368",
+      "bytes": 1669365026
+    },
+    "frontend": {
+      "local_tag": "idioma-lab3/frontend:src-54ad7f063cd6-red-security-final",
+      "image_id": "sha256:51214bedd3663df2ad1f307824acf1456eecc435b0642928b55afdbb5c6a541c",
+      "bytes": 118762207
+    }
+  },
+  "security": {
+    "backend": {
+      "HIGH": 3066,
+      "CRITICAL": 247,
+      "trivy_exit_code": 1,
+      "report": "backend-trivy.json",
+      "trivy_image": "aquasec/trivy:0.76.1@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c"
+    },
+    "frontend": {
+      "HIGH": 0,
+      "CRITICAL": 0,
+      "trivy_exit_code": 0,
+      "report": "frontend-trivy.json",
+      "trivy_image": "aquasec/trivy:0.76.1@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c"
+    }
+  }
+}

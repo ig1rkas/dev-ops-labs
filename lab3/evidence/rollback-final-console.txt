@@ -1,0 +1,2 @@
+Rollback passed: src-54ad7f063cd6-green-final seconds= 8.107
+Broken release -> rollback -> live service verified

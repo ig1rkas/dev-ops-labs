@@ -13,3 +13,5 @@
 **/certs/*.crt
 **/auth/.htpasswd
 **/evidence/private/
+**/.state/
+**/.cache/

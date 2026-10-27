@@ -1,0 +1,114 @@
+{
+  "execution": "local",
+  "github_actions_executed": false,
+  "runs": [
+    {
+      "id": "red-code-final",
+      "scenario": "broken-code",
+      "status": "failed",
+      "stages": {
+        "quality": "failed",
+        "build": "skipped",
+        "scan": "skipped",
+        "publish": "skipped",
+        "deploy": "skipped",
+        "verify": "skipped"
+      }
+    },
+    {
+      "id": "red-security-final",
+      "scenario": "vulnerable",
+      "status": "failed",
+      "stages": {
+        "quality": "passed",
+        "build": "passed",
+        "scan": "failed",
+        "publish": "skipped",
+        "deploy": "skipped",
+        "verify": "skipped"
+      }
+    },
+    {
+      "id": "green-final",
+      "scenario": "good",
+      "status": "passed",
+      "stages": {
+        "quality": "passed",
+        "build": "passed",
+        "scan": "passed",
+        "publish": "passed",
+        "deploy": "passed",
+        "verify": "passed"
+      }
+    }
+  ],
+  "security": {
+    "Старый backend": {
+      "HIGH": 3066,
+      "CRITICAL": 247,
+      "trivy_exit_code": 1,
+      "report": "backend-trivy.json",
+      "trivy_image": "aquasec/trivy:0.76.1@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c"
+    },
+    "Исправленный backend": {
+      "HIGH": 44,
+      "CRITICAL": 0,
+      "trivy_exit_code": 0,
+      "report": "backend-trivy.json",
+      "trivy_image": "aquasec/trivy:0.76.1@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c"
+    },
+    "Frontend до обновления": {
+      "HIGH": 3,
+      "CRITICAL": 0
+    },
+    "Frontend после обновления": {
+      "HIGH": 0,
+      "CRITICAL": 0,
+      "trivy_exit_code": 0,
+      "report": "frontend-trivy.json",
+      "trivy_image": "aquasec/trivy:0.76.1@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c"
+    }
+  },
+  "rollback": {
+    "status": "passed",
+    "finished_at": "2026-10-27T10:26:06.718098+00:00",
+    "seconds": 8.107,
+    "restored_version": "src-54ad7f063cd6-green-final",
+    "release": {
+      "version": "src-54ad7f063cd6-green-final",
+      "source_sha256": "54ad7f063cd68adea582c96c9f85f1ff47479492e3672a7ae33bf4a926f482fa",
+      "published_at": "2026-10-27T10:19:38.150376+00:00",
+      "backend": {
+        "local_tag": "idioma-lab3/backend:src-54ad7f063cd6-green-final",
+        "image_id": "sha256:e65aab3943c67f31bb9702e3cd1a606424ba1c00ece11648243c68cd7baf1ac9",
+        "bytes": 427118754,
+        "tag": "localhost:5003/idioma/backend:src-54ad7f063cd6-green-final",
+        "digest_ref": "localhost:5003/idioma/backend@sha256:e65aab3943c67f31bb9702e3cd1a606424ba1c00ece11648243c68cd7baf1ac9"
+      },
+      "frontend": {
+        "local_tag": "idioma-lab3/frontend:src-54ad7f063cd6-green-final",
+        "image_id": "sha256:5fa84a0cd28806d28223294b622f4299a840330be4f77ec064c2784393472d56",
+        "bytes": 118762207,
+        "tag": "localhost:5003/idioma/frontend:src-54ad7f063cd6-green-final",
+        "digest_ref": "localhost:5003/idioma/frontend@sha256:5fa84a0cd28806d28223294b622f4299a840330be4f77ec064c2784393472d56"
+      }
+    }
+  },
+  "bad_pipeline": {
+    "started_at": "2026-10-27T10:21:42.551897+00:00",
+    "execution": "local",
+    "intentional_bad_practices": true,
+    "ignored_test_exit_code": 1,
+    "deployed_despite_failed_tests": true,
+    "security_scan": "absent",
+    "versioning": "latest only",
+    "observed_health": {
+      "status": "ok",
+      "service": "idioma"
+    },
+    "observed_registration_status": 201,
+    "observed_login_status": 401,
+    "status": "completed with ignored failed tests",
+    "finished_at": "2026-10-27T10:22:34.724353+00:00"
+  }
+}

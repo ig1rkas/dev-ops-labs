@@ -1,0 +1,130 @@
+
+$ docker build --progress=plain -f lab2/Dockerfile.good -t idioma-lab3/backend:src-54ad7f063cd6-green-final --label org.opencontainers.image.revision=54ad7f063cd68adea582c96c9f85f1ff47479492e3672a7ae33bf4a926f482fa --target backend .
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.good
+#1 transferring dockerfile: 2.06kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.2s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#3 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/python:3.12.16-slim@sha256:962f801b08c870ac2a51b72bf02dae38c9a4162319e5e882ec244e198188d54e
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 249.90kB done
+#5 DONE 0.0s
+
+#6 [dependencies 1/5] FROM docker.io/library/python:3.12.16-slim@sha256:962f801b08c870ac2a51b72bf02dae38c9a4162319e5e882ec244e198188d54e
+#6 resolve docker.io/library/python:3.12.16-slim@sha256:962f801b08c870ac2a51b72bf02dae38c9a4162319e5e882ec244e198188d54e 0.0s done
+#6 DONE 0.0s
+
+#7 [backend 3/5] RUN groupadd --system app && useradd --system --gid app --home-dir /app app
+#7 CACHED
+
+#8 [dependencies 4/5] RUN python -m venv /opt/venv
+#8 CACHED
+
+#9 [dependencies 2/5] WORKDIR /build
+#9 CACHED
+
+#10 [dependencies 3/5] COPY lab0/app/src/backend/requirements.lock ./requirements.lock
+#10 CACHED
+
+#11 [dependencies 5/5] RUN --mount=type=cache,target=/root/.cache/pip /opt/venv/bin/pip install -r requirements.lock
+#11 CACHED
+
+#12 [backend 2/5] WORKDIR /app
+#12 CACHED
+
+#13 [backend 4/5] COPY --from=dependencies /opt/venv /opt/venv
+#13 CACHED
+
+#14 [backend 5/5] COPY --chown=app:app lab0/app/src/backend/app ./app
+#14 CACHED
+
+#15 exporting to image
+#15 exporting layers done
+#15 exporting manifest sha256:9da0f48b9bf327f60e4ff9b86b89d3579c40496c148af4e2d8aa6c0417e652a5 done
+#15 exporting config sha256:481b3185cd1356f39b03a4123ea7790c0085aca0a6595780af048cf14b0b4c28 done
+#15 exporting attestation manifest sha256:50c8db4b7fc574188ff27a612fef2af1328ea6b4c22166bd0a124685cf1d509e done
+#15 exporting manifest list sha256:e65aab3943c67f31bb9702e3cd1a606424ba1c00ece11648243c68cd7baf1ac9 done
+#15 naming to docker.io/idioma-lab3/backend:src-54ad7f063cd6-green-final done
+#15 unpacking to docker.io/idioma-lab3/backend:src-54ad7f063cd6-green-final done
+#15 DONE 0.0s
+
+exit_code=0
+
+$ docker build --progress=plain -f lab2/Dockerfile.good -t idioma-lab3/frontend:src-54ad7f063cd6-green-final --label org.opencontainers.image.revision=54ad7f063cd68adea582c96c9f85f1ff47479492e3672a7ae33bf4a926f482fa --target frontend .
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.good
+#1 transferring dockerfile: 2.06kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.3s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#3 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/nginx:stable-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951
+#4 DONE 0.0s
+
+#5 [internal] load metadata for docker.io/library/node:22.23.4-alpine3.24@sha256:fe4f6d74e20370acb04ad889077d14d0f64a9c8ea6a42bc60cddf1e844699914
+#5 DONE 0.0s
+
+#6 [frontend 1/4] FROM docker.io/library/nginx:stable-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951
+#6 resolve docker.io/library/nginx:stable-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951 0.0s done
+#6 DONE 0.0s
+
+#7 [frontend-build 1/6] FROM docker.io/library/node:22.23.4-alpine3.24@sha256:fe4f6d74e20370acb04ad889077d14d0f64a9c8ea6a42bc60cddf1e844699914
+#7 resolve docker.io/library/node:22.23.4-alpine3.24@sha256:fe4f6d74e20370acb04ad889077d14d0f64a9c8ea6a42bc60cddf1e844699914 0.0s done
+#7 DONE 0.0s
+
+#8 [internal] load build context
+#8 transferring context: 14.88MB 0.1s
+#8 transferring context: 15.74MB 0.1s done
+#8 DONE 0.1s
+
+#9 [frontend-build 4/6] RUN --mount=type=cache,target=/root/.npm npm ci --no-audit --no-fund
+#9 CACHED
+
+#10 [frontend-build 6/6] RUN npm run build
+#10 CACHED
+
+#11 [frontend 2/4] RUN apk add --upgrade --no-cache brotli-libs=1.2.1-r0 curl=8.23.0-r0 libcurl=8.23.0-r0
+#11 CACHED
+
+#12 [frontend-build 5/6] COPY lab0/app/src/frontend/ ./
+#12 CACHED
+
+#13 [frontend 3/4] COPY --from=frontend-build /build/dist /usr/share/nginx/html
+#13 CACHED
+
+#14 [frontend-build 3/6] COPY lab0/app/src/frontend/package*.json ./
+#14 CACHED
+
+#15 [frontend-build 2/6] WORKDIR /build
+#15 CACHED
+
+#16 [frontend 4/4] COPY lab2/nginx.conf /etc/nginx/nginx.conf
+#16 CACHED
+
+#17 exporting to image
+#17 exporting layers done
+#17 exporting manifest sha256:45cbb5a727ec767bf374145af648e716c5e91d7f226c3ffdee645966ef9b486c done
+#17 exporting config sha256:30f29e904e0784b5f9205be52fa9fd98f85fbc2be370be0b433d8e6e0dcf7962 done
+#17 exporting attestation manifest sha256:58651d61ab98b0ecdd6f8932d900f1aa0805896845000d6379b907d7430c3862 done
+#17 exporting manifest list sha256:5fa84a0cd28806d28223294b622f4299a840330be4f77ec064c2784393472d56 done
+#17 naming to docker.io/idioma-lab3/frontend:src-54ad7f063cd6-green-final done
+#17 unpacking to docker.io/idioma-lab3/frontend:src-54ad7f063cd6-green-final done
+#17 DONE 0.0s
+
+exit_code=0

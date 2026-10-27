@@ -1,0 +1,109 @@
+
+$ docker build --progress=plain -f lab3/Dockerfile.quality -t idioma-lab3/quality:locked .
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.quality
+#1 transferring dockerfile: 427B done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.6s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#3 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/python:3.12.16-slim@sha256:962f801b08c870ac2a51b72bf02dae38c9a4162319e5e882ec244e198188d54e
+#4 DONE 0.0s
+
+#5 [internal] load .dockerignore
+#5 transferring context: 171B done
+#5 DONE 0.0s
+
+#6 [stage-0 1/4] FROM docker.io/library/python:3.12.16-slim@sha256:962f801b08c870ac2a51b72bf02dae38c9a4162319e5e882ec244e198188d54e
+#6 resolve docker.io/library/python:3.12.16-slim@sha256:962f801b08c870ac2a51b72bf02dae38c9a4162319e5e882ec244e198188d54e done
+#6 DONE 0.0s
+
+#7 [internal] load build context
+#7 transferring context: 1.14kB done
+#7 DONE 0.0s
+
+#8 [stage-0 2/4] COPY lab0/app/src/backend/requirements.lock /deps/requirements.lock
+#8 CACHED
+
+#9 [stage-0 3/4] RUN --mount=type=cache,target=/root/.cache/pip pip install -r /deps/requirements.lock ruff==0.17.3 httpx==0.28.1
+#9 CACHED
+
+#10 [stage-0 4/4] WORKDIR /src
+#10 CACHED
+
+#11 exporting to image
+#11 exporting layers done
+#11 exporting manifest sha256:ed21830c635e4270028a033eca12624f3d2a04630b82ad69c5ba4256acdc6ccf done
+#11 exporting config sha256:525a964d84f217021e467af855b99b6ffe5b47541b6ec4f0538af04a8bf13ab2 done
+#11 exporting attestation manifest sha256:29b02d6a59821e981f84648d2ef0b837fbb6533f2e6579f7287704bee54f0b29 done
+#11 exporting manifest list sha256:3a5106e4dbce3aeca47c2c7aef0321fa205a7a6d035965348340665929c77010
+#11 exporting manifest list sha256:3a5106e4dbce3aeca47c2c7aef0321fa205a7a6d035965348340665929c77010 done
+#11 naming to docker.io/idioma-lab3/quality:locked done
+#11 unpacking to docker.io/idioma-lab3/quality:locked done
+#11 DONE 0.0s
+
+exit_code=0
+
+$ docker run --rm --network=none -e PYTHONPATH=/src -e AUTO_CREATE_TABLES=false -e TELEGRAM_POLLING_ENABLED=false -e TELEGRAM_MTPROTO_ENABLED=false --mount type=bind,source=/Users/denispozidaev/programming/devops/lab3/.state/regression/red-code-final,target=/src,readonly --mount type=bind,source=/Users/denispozidaev/programming/devops/lab3/tests,target=/tests,readonly --mount type=bind,source=/Users/denispozidaev/programming/devops/lab3/ruff.toml,target=/quality/ruff.toml,readonly idioma-lab3/quality:locked ruff check --no-cache --config /quality/ruff.toml /src/app /tests
+All checks passed!
+
+exit_code=0
+
+$ docker run --rm --network=none -e PYTHONPATH=/src -e AUTO_CREATE_TABLES=false -e TELEGRAM_POLLING_ENABLED=false -e TELEGRAM_MTPROTO_ENABLED=false --mount type=bind,source=/Users/denispozidaev/programming/devops/lab3/.state/regression/red-code-final,target=/src,readonly --mount type=bind,source=/Users/denispozidaev/programming/devops/lab3/tests,target=/tests,readonly --mount type=bind,source=/Users/denispozidaev/programming/devops/lab3/ruff.toml,target=/quality/ruff.toml,readonly idioma-lab3/quality:locked python -m unittest discover -s /src/tests -p 'test_*.py' -v
+test_document_route_accepts_generic_file (test_telegram_photos.TelegramPhotoTests.test_document_route_accepts_generic_file) ... ok
+test_document_send_download_and_access (test_telegram_photos.TelegramPhotoTests.test_document_send_download_and_access) ... ok
+test_mtproto_send_and_old_history_detection (test_telegram_photos.TelegramPhotoTests.test_mtproto_send_and_old_history_detection) ... ok
+test_photo_access_is_scoped_to_chat (test_telegram_photos.TelegramPhotoTests.test_photo_access_is_scoped_to_chat) ... ok
+test_photo_route_validates_payload_and_protects_read (test_telegram_photos.TelegramPhotoTests.test_photo_route_validates_payload_and_protects_read) ... ok
+test_rejects_non_image_payload (test_telegram_photos.TelegramPhotoTests.test_rejects_non_image_payload) ... ok
+test_raw_update_stores_and_removes_reactions_for_exact_message (test_telegram_reactions.TelegramReactionTests.test_raw_update_stores_and_removes_reactions_for_exact_message) ... ok
+test_refresh_reconciles_telegram_state_and_throttles_polling (test_telegram_reactions.TelegramReactionTests.test_refresh_reconciles_telegram_state_and_throttles_polling) ... ok
+test_summary_merges_standard_and_unrendered_custom_reactions (test_telegram_reactions.TelegramReactionTests.test_summary_merges_standard_and_unrendered_custom_reactions) ... ok
+test_teacher_without_assignment_cannot_refresh_other_chats (test_telegram_reactions.TelegramReactionTests.test_teacher_without_assignment_cannot_refresh_other_chats) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.099s
+
+OK
+
+exit_code=0
+
+$ docker run --rm --network=none -e PYTHONPATH=/src -e AUTO_CREATE_TABLES=false -e TELEGRAM_POLLING_ENABLED=false -e TELEGRAM_MTPROTO_ENABLED=false --mount type=bind,source=/Users/denispozidaev/programming/devops/lab3/.state/regression/red-code-final,target=/src,readonly --mount type=bind,source=/Users/denispozidaev/programming/devops/lab3/tests,target=/tests,readonly --mount type=bind,source=/Users/denispozidaev/programming/devops/lab3/ruff.toml,target=/quality/ruff.toml,readonly idioma-lab3/quality:locked python -m unittest discover -s /tests -p 'test_*.py' -v
+/usr/local/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_duplicate_registration_is_rejected (test_auth_contract.AuthContractTests.test_duplicate_registration_is_rejected) ... ok
+test_password_is_not_stored_or_returned_in_plaintext (test_auth_contract.AuthContractTests.test_password_is_not_stored_or_returned_in_plaintext) ... FAIL
+test_public_registration_cannot_create_admin (test_auth_contract.AuthContractTests.test_public_registration_cannot_create_admin) ... ok
+test_registered_account_can_be_read_and_logged_in_again (test_auth_contract.AuthContractTests.test_registered_account_can_be_read_and_logged_in_again) ... FAIL
+test_wrong_password_and_missing_token_are_rejected (test_auth_contract.AuthContractTests.test_wrong_password_and_missing_token_are_rejected) ... ok
+
+======================================================================
+FAIL: test_password_is_not_stored_or_returned_in_plaintext (test_auth_contract.AuthContractTests.test_password_is_not_stored_or_returned_in_plaintext)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/test_auth_contract.py", line 53, in test_password_is_not_stored_or_returned_in_plaintext
+    self.assertNotEqual(stored.password_hash, self.payload["password"])
+AssertionError: 'Test-password-2026' == 'Test-password-2026'
+
+======================================================================
+FAIL: test_registered_account_can_be_read_and_logged_in_again (test_auth_contract.AuthContractTests.test_registered_account_can_be_read_and_logged_in_again)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tests/test_auth_contract.py", line 62, in test_registered_account_can_be_read_and_logged_in_again
+    self.assertEqual(login.status_code, 200, login.text)
+AssertionError: 401 != 200 : {"detail":"Неверный email или пароль"}
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.093s
+
+FAILED (failures=2)
+
+exit_code=1
+
+FAILED: Command '['docker', 'run', '--rm', '--network=none', '-e', 'PYTHONPATH=/src', '-e', 'AUTO_CREATE_TABLES=false', '-e', 'TELEGRAM_POLLING_ENABLED=false', '-e', 'TELEGRAM_MTPROTO_ENABLED=false', '--mount', 'type=bind,source=/Users/denispozidaev/programming/devops/lab3/.state/regression/red-code-final,target=/src,readonly', '--mount', 'type=bind,source=/Users/denispozidaev/programming/devops/lab3/tests,target=/tests,readonly', '--mount', 'type=bind,source=/Users/denispozidaev/programming/devops/lab3/ruff.toml,target=/quality/ruff.toml,readonly', 'idioma-lab3/quality:locked', 'python', '-m', 'unittest', 'discover', '-s', '/tests', '-p', 'test_*.py', '-v']' returned non-zero exit status 1.

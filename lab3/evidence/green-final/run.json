@@ -1,0 +1,107 @@
+{
+  "id": "green-final",
+  "execution": "local",
+  "scenario": "good",
+  "started_at": "2026-10-27T10:19:29.106791+00:00",
+  "status": "passed",
+  "base_git_head": "6ee8d1b5463bd28f37466d5aad80a64cb3b25745",
+  "source_sha256": "54ad7f063cd68adea582c96c9f85f1ff47479492e3672a7ae33bf4a926f482fa",
+  "deployment_before": [
+    "159b04055bb7 localhost:5003/idioma/backend",
+    "1d81308a7063 localhost:5003/idioma/frontend",
+    "de2e1311323a postgres:16.15-bookworm"
+  ],
+  "registry": "localhost:5003/idioma",
+  "stages": {
+    "quality": {
+      "status": "passed",
+      "started_at": "2026-10-27T10:19:29.154902+00:00",
+      "finished_at": "2026-10-27T10:19:34.303871+00:00",
+      "seconds": 5.149
+    },
+    "build": {
+      "status": "passed",
+      "started_at": "2026-10-27T10:19:34.337010+00:00",
+      "finished_at": "2026-10-27T10:19:35.603948+00:00",
+      "seconds": 1.267
+    },
+    "scan": {
+      "status": "passed",
+      "started_at": "2026-10-27T10:19:35.628295+00:00",
+      "finished_at": "2026-10-27T10:19:37.932826+00:00",
+      "seconds": 2.304
+    },
+    "publish": {
+      "status": "passed",
+      "started_at": "2026-10-27T10:19:37.967795+00:00",
+      "finished_at": "2026-10-27T10:19:39.730989+00:00",
+      "seconds": 1.763
+    },
+    "deploy": {
+      "status": "passed",
+      "started_at": "2026-10-27T10:19:39.755797+00:00",
+      "finished_at": "2026-10-27T10:19:53.672551+00:00",
+      "seconds": 13.916
+    },
+    "verify": {
+      "status": "passed",
+      "started_at": "2026-10-27T10:19:53.700697+00:00",
+      "finished_at": "2026-10-27T10:19:53.828565+00:00",
+      "seconds": 0.128
+    }
+  },
+  "version": "src-54ad7f063cd6-green-final",
+  "deployment_after": [
+    "87e42d542f64 localhost:5003/idioma/backend",
+    "92f157189092 localhost:5003/idioma/frontend",
+    "de2e1311323a postgres:16.15-bookworm"
+  ],
+  "updated_at": "2026-10-27T10:19:53.854003+00:00",
+  "images": {
+    "backend": {
+      "local_tag": "idioma-lab3/backend:src-54ad7f063cd6-green-final",
+      "image_id": "sha256:e65aab3943c67f31bb9702e3cd1a606424ba1c00ece11648243c68cd7baf1ac9",
+      "bytes": 427118754
+    },
+    "frontend": {
+      "local_tag": "idioma-lab3/frontend:src-54ad7f063cd6-green-final",
+      "image_id": "sha256:5fa84a0cd28806d28223294b622f4299a840330be4f77ec064c2784393472d56",
+      "bytes": 118762207
+    }
+  },
+  "security": {
+    "backend": {
+      "HIGH": 44,
+      "CRITICAL": 0,
+      "trivy_exit_code": 0,
+      "report": "backend-trivy.json",
+      "trivy_image": "aquasec/trivy:0.76.1@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c"
+    },
+    "frontend": {
+      "HIGH": 0,
+      "CRITICAL": 0,
+      "trivy_exit_code": 0,
+      "report": "frontend-trivy.json",
+      "trivy_image": "aquasec/trivy:0.76.1@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c"
+    }
+  },
+  "release": {
+    "version": "src-54ad7f063cd6-green-final",
+    "source_sha256": "54ad7f063cd68adea582c96c9f85f1ff47479492e3672a7ae33bf4a926f482fa",
+    "published_at": "2026-10-27T10:19:38.150376+00:00",
+    "backend": {
+      "local_tag": "idioma-lab3/backend:src-54ad7f063cd6-green-final",
+      "image_id": "sha256:e65aab3943c67f31bb9702e3cd1a606424ba1c00ece11648243c68cd7baf1ac9",
+      "bytes": 427118754,
+      "tag": "localhost:5003/idioma/backend:src-54ad7f063cd6-green-final",
+      "digest_ref": "localhost:5003/idioma/backend@sha256:e65aab3943c67f31bb9702e3cd1a606424ba1c00ece11648243c68cd7baf1ac9"
+    },
+    "frontend": {
+      "local_tag": "idioma-lab3/frontend:src-54ad7f063cd6-green-final",
+      "image_id": "sha256:5fa84a0cd28806d28223294b622f4299a840330be4f77ec064c2784393472d56",
+      "bytes": 118762207,
+      "tag": "localhost:5003/idioma/frontend:src-54ad7f063cd6-green-final",
+      "digest_ref": "localhost:5003/idioma/frontend@sha256:5fa84a0cd28806d28223294b622f4299a840330be4f77ec064c2784393472d56"
+    }
+  }
+}

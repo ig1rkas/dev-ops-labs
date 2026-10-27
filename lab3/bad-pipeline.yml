@@ -1,0 +1,18 @@
+# Deliberately bad educational workflow. Not placed in .github/workflows.
+name: Lab 3 bad CI/CD example
+on:
+  workflow_dispatch:
+permissions: write-all # Bad: excessive permissions for every step.
+jobs:
+  deploy:
+    runs-on: [self-hosted, idioma-lab3]
+    env:
+      # Intentionally public DUMMY values, never real credentials.
+      POSTGRES_PASSWORD: insecure-lab-demo-password
+      ADMIN_PASSWORD: insecure-lab-demo-admin
+    steps:
+      - uses: actions/checkout@main # Bad: moving action reference.
+      # The same script was exercised locally. It ignores a real failed test,
+      # builds with --no-cache, overwrites latest, skips Trivy and still deploys.
+      - name: Run the intentionally bad pipeline
+        run: python3 lab3/bad_pipeline.py

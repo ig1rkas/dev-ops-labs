@@ -1,0 +1,31 @@
+
+$ docker compose --env-file /Users/denispozidaev/programming/devops/lab3/.state/deploy.env -f /Users/denispozidaev/programming/devops/lab3/compose.yaml pull backend frontend
+ Image localhost:5003/idioma/backend@sha256:e65aab3943c67f31bb9702e3cd1a606424ba1c00ece11648243c68cd7baf1ac9 Pulling 
+ Image localhost:5003/idioma/frontend@sha256:5fa84a0cd28806d28223294b622f4299a840330be4f77ec064c2784393472d56 Pulling 
+ Image localhost:5003/idioma/frontend@sha256:5fa84a0cd28806d28223294b622f4299a840330be4f77ec064c2784393472d56 Pulled 
+ Image localhost:5003/idioma/backend@sha256:e65aab3943c67f31bb9702e3cd1a606424ba1c00ece11648243c68cd7baf1ac9 Pulled 
+
+exit_code=0
+
+$ docker compose --env-file /Users/denispozidaev/programming/devops/lab3/.state/deploy.env -f /Users/denispozidaev/programming/devops/lab3/compose.yaml up -d --wait --wait-timeout 90
+ Container idioma-lab3-db-1 Running 
+ Container idioma-lab3-backend-1 Recreate 
+ Container idioma-lab3-backend-1 Recreated 
+ Container idioma-lab3-frontend-1 Recreate 
+ Container idioma-lab3-frontend-1 Recreated 
+ Container idioma-lab3-db-1 Waiting 
+ Container idioma-lab3-db-1 Healthy 
+ Container idioma-lab3-backend-1 Starting 
+ Container idioma-lab3-backend-1 Started 
+ Container idioma-lab3-backend-1 Waiting 
+ Container idioma-lab3-backend-1 Healthy 
+ Container idioma-lab3-frontend-1 Starting 
+ Container idioma-lab3-frontend-1 Started 
+ Container idioma-lab3-db-1 Waiting 
+ Container idioma-lab3-backend-1 Waiting 
+ Container idioma-lab3-frontend-1 Waiting 
+ Container idioma-lab3-db-1 Healthy 
+ Container idioma-lab3-backend-1 Healthy 
+ Container idioma-lab3-frontend-1 Healthy 
+
+exit_code=0

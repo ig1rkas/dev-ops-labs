@@ -1,3 +1,4 @@
 **/evidence/*.txt -whitespace
 **/evidence/*.log -whitespace
 **/evidence/*.html -whitespace
+**/evidence/** -whitespace

@@ -1,0 +1,123 @@
+
+$ docker build --progress=plain -f lab3/Dockerfile.broken --build-arg BASE_IMAGE=idioma-lab3/backend:src-54ad7f063cd6-green-final -t idioma-lab3/backend:broken-741afb00df17 .
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.broken
+#1 transferring dockerfile: 258B done
+#1 WARN: InvalidDefaultArgInFrom: Default value for ARG ${BASE_IMAGE} results in empty or invalid base image name (line 3)
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/idioma-lab3/backend:src-54ad7f063cd6-green-final
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 171B done
+#3 DONE 0.0s
+
+#4 [1/1] FROM docker.io/idioma-lab3/backend:src-54ad7f063cd6-green-final@sha256:e65aab3943c67f31bb9702e3cd1a606424ba1c00ece11648243c68cd7baf1ac9
+#4 resolve docker.io/idioma-lab3/backend:src-54ad7f063cd6-green-final@sha256:e65aab3943c67f31bb9702e3cd1a606424ba1c00ece11648243c68cd7baf1ac9 done
+#4 DONE 0.0s
+
+#5 exporting to image
+#5 exporting layers done
+#5 exporting manifest sha256:0f518d943f4df56ad73bfeb170a9b0adbba1329513d5e9db828718cd213e76a9 done
+#5 exporting config sha256:4e513f2a73d932c9435579f820523699a582366c295ea368a98f49a4810121d7 done
+#5 exporting attestation manifest sha256:85e95ff66fe22861a055d9678ae5aa2e516814b2880b1afd22cbf32be7709b8b done
+#5 exporting manifest list sha256:7911b40febd8d9478dd0d9ca9d7e1139a4cfb4b2ee2c19bf5cf930384a704dd2 done
+#5 naming to docker.io/idioma-lab3/backend:broken-741afb00df17 done
+#5 unpacking to docker.io/idioma-lab3/backend:broken-741afb00df17 done
+#5 DONE 0.0s
+
+ [33m1 warning found (use docker --debug to expand):
+[0m - InvalidDefaultArgInFrom: Default value for ARG ${BASE_IMAGE} results in empty or invalid base image name (line 3)
+
+exit_code=0
+
+$ docker tag idioma-lab3/backend:broken-741afb00df17 localhost:5003/idioma/backend:broken-741afb00df17
+
+exit_code=0
+
+$ docker push localhost:5003/idioma/backend:broken-741afb00df17
+The push refers to repository [localhost:5003/idioma/backend]
+ddc0c1e36a67: Waiting
+1fe8ddfb8cbb: Waiting
+a7a7239cf565: Waiting
+44136fa355b3: Waiting
+1fe8ddfb8cbb: Waiting
+a7a7239cf565: Waiting
+44136fa355b3: Waiting
+ddc0c1e36a67: Waiting
+1fe8ddfb8cbb: Waiting
+a7a7239cf565: Waiting
+44136fa355b3: Waiting
+ddc0c1e36a67: Waiting
+1fe8ddfb8cbb: Waiting
+a7a7239cf565: Waiting
+44136fa355b3: Waiting
+ddc0c1e36a67: Waiting
+ddc0c1e36a67: Waiting
+1fe8ddfb8cbb: Waiting
+a7a7239cf565: Waiting
+44136fa355b3: Waiting
+1fe8ddfb8cbb: Waiting
+a7a7239cf565: Waiting
+44136fa355b3: Waiting
+ddc0c1e36a67: Waiting
+1fe8ddfb8cbb: Layer already exists
+ff13255a981b: Layer already exists
+3634f8258f7a: Layer already exists
+7f52ffb5d4a1: Layer already exists
+6a9050e31579: Layer already exists
+0bdbc3bdd22a: Layer already exists
+a7a7239cf565: Pushed
+44136fa355b3: Already exists
+ddc0c1e36a67: Layer already exists
+60bed8456685: Layer already exists
+broken-741afb00df17: digest: sha256:7911b40febd8d9478dd0d9ca9d7e1139a4cfb4b2ee2c19bf5cf930384a704dd2 size: 856
+
+exit_code=0
+
+$ docker compose --env-file /Users/denispozidaev/programming/devops/lab3/.state/deploy.env -f /Users/denispozidaev/programming/devops/lab3/compose.yaml pull backend frontend
+ Image localhost:5003/idioma/backend@sha256:7911b40febd8d9478dd0d9ca9d7e1139a4cfb4b2ee2c19bf5cf930384a704dd2 Pulling 
+ Image localhost:5003/idioma/frontend@sha256:5fa84a0cd28806d28223294b622f4299a840330be4f77ec064c2784393472d56 Pulling 
+ Image localhost:5003/idioma/backend@sha256:7911b40febd8d9478dd0d9ca9d7e1139a4cfb4b2ee2c19bf5cf930384a704dd2 Pulled 
+ Image localhost:5003/idioma/frontend@sha256:5fa84a0cd28806d28223294b622f4299a840330be4f77ec064c2784393472d56 Pulled 
+
+exit_code=0
+
+$ docker compose --env-file /Users/denispozidaev/programming/devops/lab3/.state/deploy.env -f /Users/denispozidaev/programming/devops/lab3/compose.yaml up -d --wait --wait-timeout 20
+ Container idioma-lab3-frontend-1 Running 
+ Container idioma-lab3-db-1 Running 
+ Container idioma-lab3-backend-1 Recreate 
+ Container idioma-lab3-backend-1 Recreated 
+ Container idioma-lab3-db-1 Waiting 
+ Container idioma-lab3-db-1 Healthy 
+ Container idioma-lab3-backend-1 Starting 
+ Container idioma-lab3-backend-1 Started 
+ Container idioma-lab3-backend-1 Waiting 
+ Container idioma-lab3-backend-1 Error dependency backend failed to start
+dependency failed to start: container idioma-lab3-backend-1 is unhealthy
+
+exit_code=1
+
+EXPECTED: intentionally broken deployment failed its readiness check.
+
+$ docker compose --env-file /Users/denispozidaev/programming/devops/lab3/.state/deploy.env -f /Users/denispozidaev/programming/devops/lab3/compose.yaml ps -a
+NAME                     IMAGE                                                                                                    COMMAND                  SERVICE    CREATED         STATUS                                  PORTS
+idioma-lab3-backend-1    localhost:5003/idioma/backend@sha256:7911b40febd8d9478dd0d9ca9d7e1139a4cfb4b2ee2c19bf5cf930384a704dd2    "python -c 'import s…"   backend    2 seconds ago   Restarting (1) Less than a second ago   
+idioma-lab3-db-1         postgres:16.15-bookworm                                                                                  "docker-entrypoint.s…"   db         9 minutes ago   Up 9 minutes (healthy)                  5432/tcp
+idioma-lab3-frontend-1   localhost:5003/idioma/frontend@sha256:5fa84a0cd28806d28223294b622f4299a840330be4f77ec064c2784393472d56   "/docker-entrypoint.…"   frontend   6 minutes ago   Up 6 minutes (healthy)                  127.0.0.1:8083->8080/tcp
+
+exit_code=0
+
+$ docker compose --env-file /Users/denispozidaev/programming/devops/lab3/.state/deploy.env -f /Users/denispozidaev/programming/devops/lab3/compose.yaml logs --tail 25 backend
+backend-1  | Intentional lab3 startup failure
+backend-1  | Intentional lab3 startup failure
+backend-1  | Intentional lab3 startup failure
+
+exit_code=0
+
+$ curl -fsS --max-time 5 http://127.0.0.1:8083/api/readiness
+curl: (22) The requested URL returned error: 504
+
+exit_code=22

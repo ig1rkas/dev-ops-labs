@@ -1,0 +1,42 @@
+
+$ docker compose --env-file /Users/denispozidaev/programming/devops/lab3/.state/deploy.env -f /Users/denispozidaev/programming/devops/lab3/compose.yaml pull backend frontend
+ Image localhost:5003/idioma/frontend@sha256:5fa84a0cd28806d28223294b622f4299a840330be4f77ec064c2784393472d56 Pulling 
+ Image localhost:5003/idioma/backend@sha256:e65aab3943c67f31bb9702e3cd1a606424ba1c00ece11648243c68cd7baf1ac9 Pulling 
+ Image localhost:5003/idioma/backend@sha256:e65aab3943c67f31bb9702e3cd1a606424ba1c00ece11648243c68cd7baf1ac9 Pulled 
+ Image localhost:5003/idioma/frontend@sha256:5fa84a0cd28806d28223294b622f4299a840330be4f77ec064c2784393472d56 Pulled 
+
+exit_code=0
+
+$ docker compose --env-file /Users/denispozidaev/programming/devops/lab3/.state/deploy.env -f /Users/denispozidaev/programming/devops/lab3/compose.yaml up -d --wait --wait-timeout 90
+ Container idioma-lab3-frontend-1 Running 
+ Container idioma-lab3-db-1 Running 
+ Container idioma-lab3-backend-1 Recreate 
+ Container idioma-lab3-backend-1 Recreated 
+ Container idioma-lab3-db-1 Waiting 
+ Container idioma-lab3-db-1 Healthy 
+ Container idioma-lab3-backend-1 Starting 
+ Container idioma-lab3-backend-1 Started 
+ Container idioma-lab3-backend-1 Waiting 
+ Container idioma-lab3-backend-1 Healthy 
+ Container idioma-lab3-backend-1 Waiting 
+ Container idioma-lab3-frontend-1 Waiting 
+ Container idioma-lab3-db-1 Waiting 
+ Container idioma-lab3-db-1 Healthy 
+ Container idioma-lab3-backend-1 Healthy 
+ Container idioma-lab3-frontend-1 Healthy 
+
+exit_code=0
+
+$ curl -fsS --retry 8 --retry-delay 1 --retry-connrefused http://127.0.0.1:8083/api/readiness
+{"status":"ready","instance":"lab3-src-54ad7f063cd6-green-final"}
+exit_code=0
+
+PASS actual deployed release src-54ad7f063cd6-green-final: frontend=200, PostgreSQL registration/readback user_id=5
+
+$ docker compose --env-file /Users/denispozidaev/programming/devops/lab3/.state/deploy.env -f /Users/denispozidaev/programming/devops/lab3/compose.yaml ps
+NAME                     IMAGE                                                                                                    COMMAND                  SERVICE    CREATED         STATUS                   PORTS
+idioma-lab3-backend-1    localhost:5003/idioma/backend@sha256:e65aab3943c67f31bb9702e3cd1a606424ba1c00ece11648243c68cd7baf1ac9    "uvicorn app.main:ap…"   backend    7 seconds ago   Up 6 seconds (healthy)   8000/tcp
+idioma-lab3-db-1         postgres:16.15-bookworm                                                                                  "docker-entrypoint.s…"   db         9 minutes ago   Up 9 minutes (healthy)   5432/tcp
+idioma-lab3-frontend-1   localhost:5003/idioma/frontend@sha256:5fa84a0cd28806d28223294b622f4299a840330be4f77ec064c2784393472d56   "/docker-entrypoint.…"   frontend   6 minutes ago   Up 6 minutes (healthy)   127.0.0.1:8083->8080/tcp
+
+exit_code=0

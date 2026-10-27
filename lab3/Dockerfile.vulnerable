@@ -1,0 +1,9 @@
+# Deliberately outdated full image of the SAME application, for the security gate.
+# This image is scanned but must never reach the deployment stage.
+FROM python:3.12.0-bookworm@sha256:5eba34eb667213abb09a4c470365180d5706076f76945e49b963ac15d428a684
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+WORKDIR /app
+COPY lab0/app/src/backend/requirements.lock ./requirements.lock
+RUN pip install --no-cache-dir -r requirements.lock
+COPY lab0/app/src/backend/app ./app
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

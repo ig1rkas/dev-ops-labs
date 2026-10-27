@@ -1,0 +1,4 @@
+# Only for the explicit rollback demonstration on the isolated lab3 stack.
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE}
+CMD ["python", "-c", "import sys; print('Intentional lab3 startup failure', flush=True); sys.exit(1)"]

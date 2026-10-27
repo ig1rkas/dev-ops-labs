@@ -1,0 +1,6 @@
+1.7.12
+installed by downloading from release page
+built with go1.26.1 compiler for darwin/arm64
+
+Files: lab3-good.yml, lab3-rollback.yml, bad-pipeline.yml
+Exit code: 0

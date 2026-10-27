@@ -1,0 +1,185 @@
+
+$ docker image save idioma-lab3/backend:src-54ad7f063cd6-green-final -o /Users/denispozidaev/programming/devops/lab3/.state/green-final-backend.tar
+
+exit_code=0
+
+$ docker run --rm --memory=2g --cpus=1 --mount type=bind,source=/Users/denispozidaev/programming/devops/lab3/.state/green-final-backend.tar,target=/input/image.tar,readonly -v idioma-lab3-trivy-cache:/cache --mount type=bind,source=/Users/denispozidaev/programming/devops/lab3/evidence/green-final,target=/reports aquasec/trivy:0.76.1@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c --cache-dir /cache image --input /input/image.tar --scanners vuln --timeout 10m --severity HIGH,CRITICAL --exit-code 0 --format json --output /reports/backend-trivy.json
+2026-10-27T10:19:36Z	INFO	[vuln] Vulnerability scanning is enabled
+2026-10-27T10:19:36Z	INFO	Detected OS	family="debian" version="13.7"
+2026-10-27T10:19:36Z	INFO	[debian] Detecting vulnerabilities...	os_version="13" pkg_num=87
+2026-10-27T10:19:36Z	INFO	Number of language-specific files	num=1
+2026-10-27T10:19:36Z	INFO	[python-pkg] Detecting vulnerabilities...
+2026-10-27T10:19:36Z	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.76/guide/scanner/vulnerability#severity-selection for details.
+
+exit_code=0
+
+$ docker run --rm --memory=2g --cpus=1 --mount type=bind,source=/Users/denispozidaev/programming/devops/lab3/.state/green-final-backend.tar,target=/input/image.tar,readonly -v idioma-lab3-trivy-cache:/cache --mount type=bind,source=/Users/denispozidaev/programming/devops/lab3/evidence/green-final,target=/reports aquasec/trivy:0.76.1@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c --cache-dir /cache image --input /input/image.tar --scanners vuln --timeout 10m --skip-db-update --severity CRITICAL --exit-code 1 --format table
+2026-10-27T10:19:36Z	INFO	[vuln] Vulnerability scanning is enabled
+2026-10-27T10:19:36Z	INFO	Detected OS	family="debian" version="13.7"
+2026-10-27T10:19:36Z	INFO	[debian] Detecting vulnerabilities...	os_version="13" pkg_num=87
+2026-10-27T10:19:36Z	INFO	Number of language-specific files	num=1
+2026-10-27T10:19:36Z	INFO	[python-pkg] Detecting vulnerabilities...
+2026-10-27T10:19:36Z	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.76/guide/scanner/vulnerability#severity-selection for details.
+
+Report Summary
+
+┌──────────────────────────────────────────────────────────────────────────────────┬────────────┬─────────────────┐
+│                                      Target                                      │    Type    │ Vulnerabilities │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ /input/image.tar (debian 13.7)                                                   │   debian   │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/aiofiles-25.1.0.dist-info/METADATA         │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/aiogram-3.31.0.dist-info/METADATA          │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/aiohappyeyeballs-2.7.1.dist-info/METADATA  │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/aiohttp-3.14.5.dist-info/METADATA          │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/aiosignal-1.4.0.dist-info/METADATA         │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/alembic-1.20.1.dist-info/METADATA          │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/annotated_doc-0.0.5.dist-info/METADATA     │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/annotated_types-0.8.0.dist-info/METADATA   │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/anyio-4.15.1.dist-info/METADATA            │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/attrs-26.1.0.dist-info/METADATA            │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/certifi-2026.10.23.dist-info/METADATA      │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/click-8.5.0.dist-info/METADATA             │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/dnspython-2.9.0.dist-info/METADATA         │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/email_validator-2.3.0.dist-info/METADATA   │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/fastapi-0.162.0.dist-info/METADATA         │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/frozenlist-1.8.0.dist-info/METADATA        │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/h11-0.16.0.dist-info/METADATA              │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/httptools-0.9.0.dist-info/METADATA         │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/icalendar-7.3.0.dist-info/METADATA         │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/idna-3.20.dist-info/METADATA               │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/magic_filter-1.0.12.dist-info/METADATA     │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/mako-1.4.3.dist-info/METADATA              │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/markupsafe-3.0.4.dist-info/METADATA        │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/multidict-7.2.1.dist-info/METADATA         │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/opentelemetry_api-1.45.1.dist-info/METADA- │ python-pkg │        0        │
+│ TA                                                                               │            │                 │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA              │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/propcache-0.5.4.dist-info/METADATA         │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/psycopg-3.3.6.dist-info/METADATA           │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/psycopg_binary-3.3.6.dist-info/METADATA    │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/pyaes-1.6.1.dist-info/METADATA             │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/pyasn1-0.6.5.dist-info/METADATA            │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/pydantic-2.13.5.dist-info/METADATA         │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/pydantic_core-2.46.5.dist-info/METADATA    │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/pydantic_settings-2.16.1.dist-info/METADA- │ python-pkg │        0        │
+│ TA                                                                               │            │                 │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/python_dateutil-2.9.0.post0.dist-info/MET- │ python-pkg │        0        │
+│ ADATA                                                                            │            │                 │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/python_dotenv-1.2.4.dist-info/METADATA     │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/python_multipart-0.0.32.dist-info/METADATA │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/pyyaml-6.0.3.dist-info/METADATA            │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/recurring_ical_events-3.8.2.dist-info/MET- │ python-pkg │        0        │
+│ ADATA                                                                            │            │                 │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/rsa-4.9.1.dist-info/METADATA               │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/six-1.17.0.dist-info/METADATA              │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/sqlalchemy-2.1.6.dist-info/METADATA        │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/starlette-1.10.0.dist-info/METADATA        │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/telethon-1.45.0.dist-info/METADATA         │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/typing_extensions-4.16.0.dist-info/METADA- │ python-pkg │        0        │
+│ TA                                                                               │            │                 │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/typing_inspection-0.4.4.dist-info/METADATA │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/tzdata-2026.5.dist-info/METADATA           │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/uvicorn-0.54.0.dist-info/METADATA          │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/uvloop-0.23.0.dist-info/METADATA           │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/watchfiles-1.3.0.dist-info/METADATA        │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/websockets-17.3.dist-info/METADATA         │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/x_wr_timezone-2.0.1.dist-info/METADATA     │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ opt/venv/lib/python3.12/site-packages/yarl-1.25.1.dist-info/METADATA             │ python-pkg │        0        │
+├──────────────────────────────────────────────────────────────────────────────────┼────────────┼─────────────────┤
+│ usr/local/lib/python3.12/site-packages/pip-25.0.1.dist-info/METADATA             │ python-pkg │        0        │
+└──────────────────────────────────────────────────────────────────────────────────┴────────────┴─────────────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
+
+
+exit_code=0
+
+Severity counts: {"HIGH": 44, "CRITICAL": 0, "trivy_exit_code": 0, "report": "backend-trivy.json", "trivy_image": "aquasec/trivy:0.76.1@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c"}
+
+$ docker image save idioma-lab3/frontend:src-54ad7f063cd6-green-final -o /Users/denispozidaev/programming/devops/lab3/.state/green-final-frontend.tar
+
+exit_code=0
+
+$ docker run --rm --memory=2g --cpus=1 --mount type=bind,source=/Users/denispozidaev/programming/devops/lab3/.state/green-final-frontend.tar,target=/input/image.tar,readonly -v idioma-lab3-trivy-cache:/cache --mount type=bind,source=/Users/denispozidaev/programming/devops/lab3/evidence/green-final,target=/reports aquasec/trivy:0.76.1@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c --cache-dir /cache image --input /input/image.tar --scanners vuln --timeout 10m --severity HIGH,CRITICAL --exit-code 0 --format json --output /reports/frontend-trivy.json
+2026-10-27T10:19:37Z	INFO	[vuln] Vulnerability scanning is enabled
+2026-10-27T10:19:37Z	INFO	Detected OS	family="alpine" version="3.24.3"
+2026-10-27T10:19:37Z	INFO	[alpine] Detecting vulnerabilities...	os_version="3.24" repository="3.24" pkg_num=71
+2026-10-27T10:19:37Z	INFO	Number of language-specific files	num=0
+
+exit_code=0
+
+$ docker run --rm --memory=2g --cpus=1 --mount type=bind,source=/Users/denispozidaev/programming/devops/lab3/.state/green-final-frontend.tar,target=/input/image.tar,readonly -v idioma-lab3-trivy-cache:/cache --mount type=bind,source=/Users/denispozidaev/programming/devops/lab3/evidence/green-final,target=/reports aquasec/trivy:0.76.1@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c --cache-dir /cache image --input /input/image.tar --scanners vuln --timeout 10m --skip-db-update --severity CRITICAL --exit-code 1 --format table
+2026-10-27T10:19:37Z	INFO	[vuln] Vulnerability scanning is enabled
+2026-10-27T10:19:37Z	INFO	Detected OS	family="alpine" version="3.24.3"
+2026-10-27T10:19:37Z	INFO	[alpine] Detecting vulnerabilities...	os_version="3.24" repository="3.24" pkg_num=71
+2026-10-27T10:19:37Z	INFO	Number of language-specific files	num=0
+
+Report Summary
+
+┌──────────────────────────────────┬────────┬─────────────────┐
+│              Target              │  Type  │ Vulnerabilities │
+├──────────────────────────────────┼────────┼─────────────────┤
+│ /input/image.tar (alpine 3.24.3) │ alpine │        0        │
+└──────────────────────────────────┴────────┴─────────────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
+
+
+exit_code=0
+
+Severity counts: {"HIGH": 0, "CRITICAL": 0, "trivy_exit_code": 0, "report": "frontend-trivy.json", "trivy_image": "aquasec/trivy:0.76.1@sha256:790fd66d1697395d8693d1acaa1ea702406a20f109b6fc7bac8db623eca6c06c"}

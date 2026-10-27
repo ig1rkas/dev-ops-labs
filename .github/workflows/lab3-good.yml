@@ -1,0 +1,60 @@
+name: Lab 3 good CI/CD
+on:
+  push:
+    branches: [main]
+    paths: ["lab0/app/**", "lab2/**", "lab3/**", ".github/workflows/lab3-good.yml"]
+  workflow_dispatch:
+    inputs:
+      scenario:
+        description: "good = deploy; broken-code / vulnerable = expected blocked run"
+        type: choice
+        options: [good, broken-code, vulnerable]
+        default: good
+permissions:
+  contents: read
+  packages: write
+concurrency:
+  group: idioma-lab3-deploy
+  cancel-in-progress: false
+jobs:
+  pipeline:
+    runs-on: [self-hosted, idioma-lab3]
+    timeout-minutes: 40
+    env:
+      CI_RUN_ID: gha-${{ github.run_id }}-${{ github.run_attempt }}
+      SCENARIO: ${{ inputs.scenario || 'good' }}
+      LAB3_REGISTRY: ${{ vars.LAB3_REGISTRY || 'localhost:5003/idioma' }}
+      # Outside the checkout so checkout cleanup cannot erase rollback history.
+      LAB3_STATE_DIR: ${{ github.workspace }}/../.idioma-lab3-state
+      LAB3_POSTGRES_PASSWORD: ${{ secrets.LAB3_POSTGRES_PASSWORD }}
+      LAB3_ADMIN_PASSWORD: ${{ secrets.LAB3_ADMIN_PASSWORD }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: Authenticate to GHCR when selected
+        if: startsWith(env.LAB3_REGISTRY, 'ghcr.io/')
+        env:
+          REGISTRY_USER: ${{ github.actor }}
+          REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: printf '%s' "$REGISTRY_TOKEN" | docker login ghcr.io -u "$REGISTRY_USER" --password-stdin
+      - name: Lint and tests
+        run: python3 lab3/ci.py stage quality --run-id "$CI_RUN_ID" --scenario "$SCENARIO"
+      - name: Build immutable versioned images
+        run: python3 lab3/ci.py stage build --run-id "$CI_RUN_ID" --scenario "$SCENARIO"
+      - name: Trivy CRITICAL security gate
+        run: python3 lab3/ci.py stage scan --run-id "$CI_RUN_ID" --scenario "$SCENARIO"
+      - name: Push the scanned images
+        run: python3 lab3/ci.py stage publish --run-id "$CI_RUN_ID" --scenario "$SCENARIO"
+      - name: Deploy by registry digest
+        run: python3 lab3/ci.py stage deploy --run-id "$CI_RUN_ID" --scenario "$SCENARIO"
+      - name: Check live frontend API and PostgreSQL
+        run: python3 lab3/ci.py stage verify --run-id "$CI_RUN_ID" --scenario "$SCENARIO"
+      - name: Upload actual run evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: lab3-${{ env.CI_RUN_ID }}
+          path: lab3/evidence/${{ env.CI_RUN_ID }}
+          retention-days: 14

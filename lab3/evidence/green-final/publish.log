@@ -1,0 +1,96 @@
+
+$ docker compose -f /Users/denispozidaev/programming/devops/lab3/registry.compose.yaml up -d
+ Container idioma-lab3-registry-registry-1 Running 
+
+exit_code=0
+
+$ docker tag idioma-lab3/backend:src-54ad7f063cd6-green-final localhost:5003/idioma/backend:src-54ad7f063cd6-green-final
+
+exit_code=0
+
+$ docker push localhost:5003/idioma/backend:src-54ad7f063cd6-green-final
+The push refers to repository [localhost:5003/idioma/backend]
+1fe8ddfb8cbb: Waiting
+997b0308d7dc: Waiting
+44136fa355b3: Waiting
+ddc0c1e36a67: Waiting
+1fe8ddfb8cbb: Waiting
+997b0308d7dc: Waiting
+44136fa355b3: Waiting
+ddc0c1e36a67: Waiting
+1fe8ddfb8cbb: Waiting
+997b0308d7dc: Waiting
+44136fa355b3: Waiting
+ddc0c1e36a67: Waiting
+1fe8ddfb8cbb: Waiting
+997b0308d7dc: Waiting
+44136fa355b3: Waiting
+ddc0c1e36a67: Waiting
+1fe8ddfb8cbb: Waiting
+997b0308d7dc: Waiting
+44136fa355b3: Waiting
+ddc0c1e36a67: Waiting
+1fe8ddfb8cbb: Waiting
+997b0308d7dc: Waiting
+44136fa355b3: Waiting
+ddc0c1e36a67: Waiting
+3634f8258f7a: Layer already exists
+ff13255a981b: Layer already exists
+60bed8456685: Layer already exists
+0bdbc3bdd22a: Layer already exists
+1fe8ddfb8cbb: Layer already exists
+997b0308d7dc: Pushed
+7f52ffb5d4a1: Layer already exists
+6a9050e31579: Layer already exists
+44136fa355b3: Already exists
+ddc0c1e36a67: Layer already exists
+src-54ad7f063cd6-green-final: digest: sha256:e65aab3943c67f31bb9702e3cd1a606424ba1c00ece11648243c68cd7baf1ac9 size: 856
+
+exit_code=0
+
+$ docker tag idioma-lab3/frontend:src-54ad7f063cd6-green-final localhost:5003/idioma/frontend:src-54ad7f063cd6-green-final
+
+exit_code=0
+
+$ docker push localhost:5003/idioma/frontend:src-54ad7f063cd6-green-final
+The push refers to repository [localhost:5003/idioma/frontend]
+715a1427f9e1: Waiting
+44136fa355b3: Waiting
+d3531b7a4f21: Waiting
+872998b8576e: Waiting
+872998b8576e: Waiting
+715a1427f9e1: Waiting
+44136fa355b3: Waiting
+d3531b7a4f21: Waiting
+872998b8576e: Waiting
+715a1427f9e1: Waiting
+44136fa355b3: Waiting
+d3531b7a4f21: Waiting
+872998b8576e: Waiting
+715a1427f9e1: Waiting
+44136fa355b3: Waiting
+d3531b7a4f21: Waiting
+44136fa355b3: Waiting
+d3531b7a4f21: Waiting
+872998b8576e: Waiting
+715a1427f9e1: Waiting
+d3531b7a4f21: Waiting
+872998b8576e: Waiting
+715a1427f9e1: Waiting
+44136fa355b3: Waiting
+cd5ae81ea1c7: Layer already exists
+0ecf77f7365c: Layer already exists
+3e1f5dcaf79c: Pushed
+715a1427f9e1: Pushed
+d3531b7a4f21: Layer already exists
+0750db6b002e: Layer already exists
+2a854e0b64fe: Pushed
+16b4b65d3dae: Pushed
+872998b8576e: Layer already exists
+44136fa355b3: Already exists
+87319ffcbc38: Layer already exists
+e10bb963239e: Layer already exists
+29fdff62bf43: Layer already exists
+src-54ad7f063cd6-green-final: digest: sha256:5fa84a0cd28806d28223294b622f4299a840330be4f77ec064c2784393472d56 size: 856
+
+exit_code=0

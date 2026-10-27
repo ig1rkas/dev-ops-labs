@@ -1,0 +1,51 @@
+{
+  "id": "red-code-final",
+  "execution": "local",
+  "scenario": "broken-code",
+  "started_at": "2026-10-27T10:19:09.443665+00:00",
+  "status": "failed",
+  "base_git_head": "6ee8d1b5463bd28f37466d5aad80a64cb3b25745",
+  "source_sha256": "54ad7f063cd68adea582c96c9f85f1ff47479492e3672a7ae33bf4a926f482fa",
+  "deployment_before": [
+    "159b04055bb7 localhost:5003/idioma/backend",
+    "1d81308a7063 localhost:5003/idioma/frontend",
+    "de2e1311323a postgres:16.15-bookworm"
+  ],
+  "registry": "localhost:5003/idioma",
+  "stages": {
+    "quality": {
+      "status": "failed",
+      "started_at": "2026-10-27T10:19:09.520119+00:00",
+      "error": "Command '['docker', 'run', '--rm', '--network=none', '-e', 'PYTHONPATH=/src', '-e', 'AUTO_CREATE_TABLES=false', '-e', 'TELEGRAM_POLLING_ENABLED=false', '-e', 'TELEGRAM_MTPROTO_ENABLED=false', '--mount', 'type=bind,source=/Users/denispozidaev/programming/devops/lab3/.state/regression/red-code-final,target=/src,readonly', '--mount', 'type=bind,source=/Users/denispozidaev/programming/devops/lab3/tests,target=/tests,readonly', '--mount', 'type=bind,source=/Users/denispozidaev/programming/devops/lab3/ruff.toml,target=/quality/ruff.toml,readonly', 'idioma-lab3/quality:locked', 'python', '-m', 'unittest', 'discover', '-s', '/tests', '-p', 'test_*.py', '-v']' returned non-zero exit status 1.",
+      "finished_at": "2026-10-27T10:19:14.937688+00:00",
+      "seconds": 5.417
+    },
+    "build": {
+      "status": "skipped",
+      "reason": "quality failed"
+    },
+    "scan": {
+      "status": "skipped",
+      "reason": "quality failed"
+    },
+    "publish": {
+      "status": "skipped",
+      "reason": "quality failed"
+    },
+    "deploy": {
+      "status": "skipped",
+      "reason": "quality failed"
+    },
+    "verify": {
+      "status": "skipped",
+      "reason": "quality failed"
+    }
+  },
+  "version": "src-54ad7f063cd6-red-code-final",
+  "deployment_after": [
+    "159b04055bb7 localhost:5003/idioma/backend",
+    "1d81308a7063 localhost:5003/idioma/frontend",
+    "de2e1311323a postgres:16.15-bookworm"
+  ],
+  "updated_at": "2026-10-27T10:19:14.973478+00:00"
+}

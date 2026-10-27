@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "broken_version": "broken-741afb00df17",
+  "restored_version": "src-54ad7f063cd6-green-final",
+  "rollback_seconds": 8.107,
+  "rollback_evidence": "evidence/rollback-20261027T102558Z"
+}

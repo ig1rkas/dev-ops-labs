@@ -1,0 +1,38 @@
+# Public dummy passwords deliberately illustrate the bad pipeline.
+# Separate localhost-only stack; never reuses lab3's real generated passwords.
+name: idioma-lab3-bad
+services:
+  db:
+    image: postgres:16.15-bookworm
+    environment:
+      POSTGRES_DB: idioma
+      POSTGRES_USER: idioma
+      POSTGRES_PASSWORD: insecure-lab-demo-password
+    volumes: [bad-pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U idioma -d idioma]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  backend:
+    image: localhost:5003/idioma/bad-backend:latest
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+psycopg://idioma:insecure-lab-demo-password@db:5432/idioma
+      ADMIN_EMAIL: bad-ci-admin@example.org
+      ADMIN_PASSWORD: insecure-lab-demo-admin
+      AUTO_CREATE_TABLES: "true"
+      TELEGRAM_POLLING_ENABLED: "false"
+      TELEGRAM_MTPROTO_ENABLED: "false"
+      SEED_DEMO_ACCOUNTS: "false"
+      SEED_PUBLIC_TEACHER_ACCOUNTS: "false"
+    depends_on:
+      db: {condition: service_healthy}
+    mem_limit: 512m
+  frontend:
+    image: localhost:5003/idioma/bad-frontend:latest
+    ports: ["127.0.0.1:8084:8080"]
+    depends_on: [backend]
+    tmpfs: [/tmp]
+volumes:
+  bad-pgdata:
