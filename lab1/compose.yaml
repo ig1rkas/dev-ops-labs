@@ -1,0 +1,67 @@
+name: idioma-lab1
+x-backend: &backend
+  image: idioma-labs/backend:lab0
+  restart: unless-stopped
+  environment: &backend-env
+    DATABASE_URL: postgresql+psycopg://idioma:local-lab-password@db:5432/idioma
+    TELEGRAM_POLLING_ENABLED: "false"
+    TELEGRAM_MTPROTO_ENABLED: "false"
+    SEED_DEMO_ACCOUNTS: "false"
+    SEED_PUBLIC_TEACHER_ACCOUNTS: "false"
+    ADMIN_EMAIL: admin@example.org
+    ADMIN_PASSWORD: local-admin-password
+  healthcheck:
+    test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/readiness', timeout=2)"]
+    interval: 3s
+    timeout: 3s
+    retries: 30
+    start_period: 20s
+  networks: [edge, data]
+services:
+  db:
+    image: postgres:16.15-bookworm
+    environment:
+      POSTGRES_DB: idioma
+      POSTGRES_USER: idioma
+      POSTGRES_PASSWORD: local-lab-password
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U idioma -d idioma]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    volumes: [pgdata:/var/lib/postgresql/data]
+    networks: [data]
+  backend1:
+    <<: *backend
+    environment:
+      <<: *backend-env
+      INSTANCE_ID: backend-1
+    depends_on:
+      db: {condition: service_healthy}
+  backend2:
+    <<: *backend
+    environment:
+      <<: *backend-env
+      INSTANCE_ID: backend-2
+    # First instance creates tables and seeds catalog before the second starts.
+    depends_on:
+      backend1: {condition: service_healthy}
+  nginx:
+    build: .
+    image: idioma-labs/nginx:lab1
+    ports:
+      - "127.0.0.1:80:80"
+      - "127.0.0.1:443:443"
+    volumes:
+      - ./certs:/etc/nginx/certs:ro
+      - ./auth:/etc/nginx/auth:ro
+    depends_on:
+      backend1: {condition: service_healthy}
+      backend2: {condition: service_healthy}
+    networks: [edge]
+networks:
+  edge:
+  data:
+    internal: true
+volumes:
+  pgdata:

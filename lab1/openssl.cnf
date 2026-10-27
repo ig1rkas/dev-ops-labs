@@ -1,0 +1,12 @@
+[req]
+distinguished_name = dn
+[dn]
+[v3_req]
+subjectAltName = @alt_names
+keyUsage = critical, digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
+[alt_names]
+DNS.1 = idioma.local
+DNS.2 = second.local
+DNS.3 = localhost
+IP.1 = 127.0.0.1

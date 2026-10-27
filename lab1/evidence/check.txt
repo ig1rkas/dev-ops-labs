@@ -1,0 +1,32 @@
+Started: 2026-10-27T09:37:58.756854+00:00
+PASS HTTP 301 -> https://idioma.local/api/health
+PASS HTTPS serves the React frontend
+GET /api/health -> 200 backend-2
+GET /api/health -> 200 backend-2
+GET /api/health -> 200 backend-1
+GET /api/health -> 200 backend-2
+GET /api/health -> 200 backend-1
+GET /api/health -> 200 backend-2
+GET /api/health -> 200 backend-1
+GET /api/health -> 200 backend-2
+PASS both upstream instances receive requests
+PASS /docs/ is served from the alias directory
+PASS /admin -> 401 without password, 200 with Basic Auth
+PASS separate virtual hosts and unknown Host isolation
+PASS missing page -> branded 404
+Stopping backend1 to check failover...
+ Container idioma-lab1-backend1-1 Stopping 
+ Container idioma-lab1-backend1-1 Stopped 
+backend1 stopped: GET /api/health -> 200 backend-2
+backend1 stopped: GET /api/health -> 200 backend-2
+backend1 stopped: GET /api/health -> 200 backend-2
+backend1 stopped: GET /api/health -> 200 backend-2
+backend1 stopped: GET /api/health -> 200 backend-2
+backend1 stopped: GET /api/health -> 200 backend-2
+ Container idioma-lab1-db-1 Waiting 
+ Container idioma-lab1-db-1 Healthy 
+ Container idioma-lab1-backend1-1 Starting 
+ Container idioma-lab1-backend1-1 Started 
+PASS service survives losing half of its backends
+PASS rate limit, 60 local requests: {200: 21, 429: 39}
+All nginx checks passed

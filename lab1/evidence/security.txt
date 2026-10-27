@@ -1,0 +1,5 @@
+PASS Path traversal through alias: GET /docs/../.env -> 403; no protected data disclosed
+PASS Hidden configuration disclosure: GET /.env -> 403; no protected data disclosed
+PASS Unauthenticated administrator access: GET /admin/ -> 401; no protected data disclosed
+PASS Host confusion: unknown host cannot reach the application
+Only the owned localhost lab was tested; no external websites were scanned.
