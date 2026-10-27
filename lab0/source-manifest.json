@@ -813,10 +813,14 @@
   },
   "src/frontend/src/styles.css": {
     "source_sha256": "6e8e080cd7d1595c5f30bcb132e6d131c78896a92d0de2b450c0792bc9d9e43b",
-    "lab_sha256": "6e8e080cd7d1595c5f30bcb132e6d131c78896a92d0de2b450c0792bc9d9e43b"
+    "lab_sha256": "df2853de18ad10deda2844b5631a56d5a7716758b89d9708cb81694f4b2ec324"
   },
   "src/frontend/vite.config.js": {
     "source_sha256": "bdb24b6065f3d77cbfc20b06f8acefa5efaf8f8ce80ee1a2d7b7212385829197",
     "lab_sha256": "bdb24b6065f3d77cbfc20b06f8acefa5efaf8f8ce80ee1a2d7b7212385829197"
+  },
+  "src/backend/requirements.lock": {
+    "source_sha256": null,
+    "lab_sha256": "6699ddbe6fd23817aa96df588427724295b75d056a4f6fbad4c3f65a08642e3a"
   }
 }

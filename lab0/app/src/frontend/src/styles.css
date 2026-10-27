@@ -5231,29 +5231,7 @@ p {
   }
 }
 
-/* Registration remains implemented for future use but is not exposed in the shared auth screen. */
-.auth-tabs {
-  grid-template-columns: minmax(0, 1fr);
-}
-
-.auth-tabs::before {
-  width: calc(100% - 8px);
-}
-
-.auth-tabs.is-register::before {
-  transform: none;
-}
-
-.auth-tab--register,
-.auth-switch--register {
-  display: none !important;
-}
-
-/* The public auth page exposes only login, so it does not need a tab switcher. */
-.page-shell--auth .auth-tabs {
-  display: none;
-}
-
+/* Lab copy: expose the existing registration form for persistence checks. */
 .page-shell--auth .auth-layout--page {
   padding-top: 54px;
   padding-bottom: 28px;

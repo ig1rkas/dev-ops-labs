@@ -1,0 +1,3 @@
+PASS browser registration: browser-1793094339702@example.org user id: 3
+PASS full page reload reads the same user from the API: 3 browser-1793094339702@example.org
+PASS no browser JavaScript errors
