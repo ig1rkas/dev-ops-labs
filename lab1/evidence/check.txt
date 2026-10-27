@@ -1,7 +1,7 @@
-Started: 2026-10-27T09:37:58.756854+00:00
+Started: 2026-10-27T09:43:15.060587+00:00
 PASS HTTP 301 -> https://idioma.local/api/health
 PASS HTTPS serves the React frontend
-GET /api/health -> 200 backend-2
+GET /api/health -> 200 backend-1
 GET /api/health -> 200 backend-2
 GET /api/health -> 200 backend-1
 GET /api/health -> 200 backend-2

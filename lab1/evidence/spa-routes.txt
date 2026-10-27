@@ -1,0 +1,8 @@
+PASS full navigation /catalog -> 200; TLS verified with the lab certificate
+PASS full navigation /exams -> 200; TLS verified with the lab certificate
+PASS full navigation /programming -> 200; TLS verified with the lab certificate
+PASS full navigation /languages -> 200; TLS verified with the lab certificate
+PASS full navigation /teachers -> 200; TLS verified with the lab certificate
+PASS full navigation /reviews -> 200; TLS verified with the lab certificate
+PASS full navigation /login -> 200; TLS verified with the lab certificate
+PASS full navigation /dashboard -> 200; TLS verified with the lab certificate

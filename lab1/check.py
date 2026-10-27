@@ -62,7 +62,7 @@ def main():
     code, _, body = get('/this-page-does-not-exist')
     assert code == 404 and 'idioma custom 404' in body
     print('PASS missing page -> branded 404')
-    
+
     print('Stopping backend1 to check failover...', flush=True)
     compose('stop', 'backend1')
     try:
@@ -76,7 +76,7 @@ def main():
     finally:
         compose('start', 'backend1')
     print('PASS service survives losing half of its backends')
-    
+
     time.sleep(3)
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
         codes = list(pool.map(lambda _: get('/api/health')[0], range(60)))

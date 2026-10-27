@@ -4,7 +4,7 @@
 
 nginx служит единственной точкой входа по HTTP/HTTPS. Он самостоятельно отдаёт
 сборку React из лабы 0 и направляет `/api/` на два экземпляра FastAPI с общей
-PostgreSQL. Имена `backend-1` и `backend-2` видны в заголовке `X-Instance-ID`.
+PostgreSQL. Прямые учебные порты бэкендов на хосте — `18001` и `18002`. Имена `backend-1` и `backend-2` видны в заголовке `X-Instance-ID`.
 Контейнер nginx не подключён к сети базы.
 
 ## Запуск
@@ -92,3 +92,14 @@ docker compose down
 [proxy_next_upstream](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_next_upstream)
 и [limit_req](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html).
 Пример структуры отчёта: [Denisonya/CloudTech](https://github.com/Denisonya/CloudTech).
+
+## Дополнительные результаты проверки
+
+Проверка TLS с доверием локальному сертификату, без `-k`: [tls.txt](evidence/tls.txt).
+Все восемь внутренних маршрутов React проверены прямым открытием:
+[spa-routes.txt](evidence/spa-routes.txt). Регистрация и перезагрузка кабинета
+через HTTPS: [browser-check.txt](evidence/browser-check.txt).
+
+Снимок сохранённого фактического протокола nginx:
+
+![Результаты проверок nginx](evidence/checks.png)

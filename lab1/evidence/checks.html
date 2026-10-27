@@ -1,0 +1,40 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><title>Лабораторная 1 — проверки nginx</title><style>body{margin:40px;font:18px/1.5 system-ui;color:#172033;background:#fff}h1{font-size:30px}h2{font-size:22px;margin:28px 0 4px}pre{font:15px/1.6 ui-monospace,monospace;background:#f4f6f8;padding:20px;white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid #ddd}.hash{font:12px monospace;color:#546075}header p{font-size:15px;color:#546075}</style><header><h1>Лабораторная 1 — проверки nginx</h1><p>Снимок сохранённого фактического вывода команд. Оригинальные TXT-файлы находятся рядом с изображением.</p></header><h2>nginx-test.txt</h2><p class="hash">SHA-256 c1d95d6441adac8d73265f026042743581500b1133052abc44ed98cf52bb6618</p><pre>nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+</pre><h2>check.txt</h2><p class="hash">SHA-256 918d10f46eb494b975a0eec802127c3fc24701b7d8a7f62ee4c5eed6258ff047</p><pre>Started: 2026-10-27T09:43:15.060587+00:00
+PASS HTTP 301 -&gt; https://idioma.local/api/health
+PASS HTTPS serves the React frontend
+GET /api/health -&gt; 200 backend-1
+GET /api/health -&gt; 200 backend-2
+GET /api/health -&gt; 200 backend-1
+GET /api/health -&gt; 200 backend-2
+GET /api/health -&gt; 200 backend-1
+GET /api/health -&gt; 200 backend-2
+GET /api/health -&gt; 200 backend-1
+GET /api/health -&gt; 200 backend-2
+PASS both upstream instances receive requests
+PASS /docs/ is served from the alias directory
+PASS /admin -&gt; 401 without password, 200 with Basic Auth
+PASS separate virtual hosts and unknown Host isolation
+PASS missing page -&gt; branded 404
+Stopping backend1 to check failover...
+ Container idioma-lab1-backend1-1 Stopping 
+ Container idioma-lab1-backend1-1 Stopped 
+backend1 stopped: GET /api/health -&gt; 200 backend-2
+backend1 stopped: GET /api/health -&gt; 200 backend-2
+backend1 stopped: GET /api/health -&gt; 200 backend-2
+backend1 stopped: GET /api/health -&gt; 200 backend-2
+backend1 stopped: GET /api/health -&gt; 200 backend-2
+backend1 stopped: GET /api/health -&gt; 200 backend-2
+ Container idioma-lab1-db-1 Waiting 
+ Container idioma-lab1-db-1 Healthy 
+ Container idioma-lab1-backend1-1 Starting 
+ Container idioma-lab1-backend1-1 Started 
+PASS service survives losing half of its backends
+PASS rate limit, 60 local requests: {200: 21, 429: 39}
+All nginx checks passed
+</pre><h2>security.txt</h2><p class="hash">SHA-256 8d066d2b6c7396081c9a945e7f40918945a692c40e4d438cc4d905b4327418f6</p><pre>PASS Path traversal through alias: GET /docs/../.env -&gt; 403; no protected data disclosed
+PASS Hidden configuration disclosure: GET /.env -&gt; 403; no protected data disclosed
+PASS Unauthenticated administrator access: GET /admin/ -&gt; 401; no protected data disclosed
+PASS Host confusion: unknown host cannot reach the application
+Only the owned localhost lab was tested; no external websites were scanned.
+</pre></html>

@@ -1,5 +1,5 @@
-NAME                     IMAGE                      COMMAND                  SERVICE    CREATED              STATUS                            PORTS
-idioma-lab1-backend1-1   idioma-labs/backend:lab0   "uvicorn app.main:ap…"   backend1   About a minute ago   Up 3 seconds (health: starting)   8000/tcp
-idioma-lab1-backend2-1   idioma-labs/backend:lab0   "uvicorn app.main:ap…"   backend2   About a minute ago   Up About a minute (healthy)       8000/tcp
-idioma-lab1-db-1         postgres:16.15-bookworm    "docker-entrypoint.s…"   db         About a minute ago   Up About a minute (healthy)       5432/tcp
-idioma-lab1-nginx-1      idioma-labs/nginx:lab1     "/docker-entrypoint.…"   nginx      About a minute ago   Up About a minute                 127.0.0.1:80->80/tcp, 127.0.0.1:443->443/tcp
+NAME                     IMAGE                      COMMAND                  SERVICE    CREATED          STATUS                            PORTS
+idioma-lab1-backend1-1   idioma-labs/backend:lab0   "uvicorn app.main:ap…"   backend1   22 seconds ago   Up 3 seconds (health: starting)   127.0.0.1:18001->8000/tcp
+idioma-lab1-backend2-1   idioma-labs/backend:lab0   "uvicorn app.main:ap…"   backend2   22 seconds ago   Up 14 seconds (healthy)           127.0.0.1:18002->8000/tcp
+idioma-lab1-db-1         postgres:16.15-bookworm    "docker-entrypoint.s…"   db         7 minutes ago    Up 7 minutes (healthy)            5432/tcp
+idioma-lab1-nginx-1      idioma-labs/nginx:lab1     "/docker-entrypoint.…"   nginx      21 seconds ago   Up 8 seconds                      127.0.0.1:80->80/tcp, 127.0.0.1:443->443/tcp
