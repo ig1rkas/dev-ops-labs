@@ -1,0 +1,14 @@
+# Deliberately bad educational example; never use as a production image.
+# 1. Moving tag and full distribution: large, non-reproducible base.
+FROM python:3.12
+WORKDIR /workspace
+# 2. Copies all lab sources and frontend assets into the backend image.
+# 3. Changing any source invalidates the dependency installation layer.
+COPY . .
+WORKDIR /workspace/lab0/app/src/backend
+# 4. Package cache remains in the final image.
+RUN pip install -r requirements.lock
+# 5. No separate runtime stage, no non-root USER, no HEALTHCHECK.
+# 6. Shell-form command complicates forwarding signals to the process.
+EXPOSE 8000
+CMD uvicorn app.main:app --host 0.0.0.0 --port 8000

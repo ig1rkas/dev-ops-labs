@@ -1,0 +1,67 @@
+name: idioma-lab2
+services:
+  db:
+    image: postgres:16.15-bookworm
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: idioma
+      POSTGRES_USER: idioma
+      POSTGRES_PASSWORD: local-lab-password
+    volumes: [pgdata:/var/lib/postgresql/data]
+    networks: [data]
+    mem_limit: 256m
+    cpus: 0.5
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U idioma -d idioma]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  backend:
+    build:
+      context: ..
+      dockerfile: lab2/Dockerfile.good
+      target: backend
+    image: idioma-labs/backend:lab2-good
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql+psycopg://idioma:local-lab-password@db:5432/idioma
+      AUTO_CREATE_TABLES: "true"
+      TELEGRAM_POLLING_ENABLED: "false"
+      TELEGRAM_MTPROTO_ENABLED: "false"
+      SEED_DEMO_ACCOUNTS: "false"
+      SEED_PUBLIC_TEACHER_ACCOUNTS: "false"
+      ADMIN_EMAIL: admin@example.org
+      ADMIN_PASSWORD: local-admin-password
+      INSTANCE_ID: lab2-backend
+    networks: [edge, data]
+    depends_on:
+      db: {condition: service_healthy}
+    mem_limit: 512m
+    cpus: 0.5
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    read_only: true
+    tmpfs: [/tmp]
+  frontend:
+    build:
+      context: ..
+      dockerfile: lab2/Dockerfile.good
+      target: frontend
+    image: idioma-labs/frontend:lab2-good
+    restart: unless-stopped
+    ports: ["127.0.0.1:8082:8080"]
+    networks: [edge]
+    depends_on:
+      backend: {condition: service_healthy}
+    mem_limit: 128m
+    cpus: 0.5
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    read_only: true
+    tmpfs: [/tmp]
+networks:
+  edge:
+  data:
+    internal: true
+volumes:
+  pgdata:

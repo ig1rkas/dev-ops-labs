@@ -1,0 +1,214 @@
+ Image idioma-labs/backend:lab2-good Building 
+ Image idioma-labs/frontend:lab2-good Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.10kB done
+#1 DONE 0.0s
+
+#2 [frontend internal] load build definition from Dockerfile.good
+#2 transferring dockerfile: 1.87kB done
+#2 DONE 0.0s
+
+#3 [auth] docker/dockerfile:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#4 [frontend] resolve image config for docker-image://docker.io/docker/dockerfile:1
+#4 DONE 1.1s
+
+#5 [backend] docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#5 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e done
+#5 CACHED
+
+#6 [backend internal] load metadata for docker.io/library/python:3.12.16-slim@sha256:962f801b08c870ac2a51b72bf02dae38c9a4162319e5e882ec244e198188d54e
+#6 DONE 0.0s
+
+#7 [frontend internal] load metadata for docker.io/library/nginx:stable-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951
+#7 DONE 0.0s
+
+#8 [frontend internal] load metadata for docker.io/library/node:22.23.4-alpine3.24@sha256:fe4f6d74e20370acb04ad889077d14d0f64a9c8ea6a42bc60cddf1e844699914
+#8 DONE 0.0s
+
+#9 [backend internal] load build context
+#9 transferring context: 250.86kB 0.0s done
+#9 DONE 0.0s
+
+#10 [frontend internal] load build context
+#10 ...
+
+#11 [frontend frontend-build 1/6] FROM docker.io/library/node:22.23.4-alpine3.24@sha256:fe4f6d74e20370acb04ad889077d14d0f64a9c8ea6a42bc60cddf1e844699914
+#11 resolve docker.io/library/node:22.23.4-alpine3.24@sha256:fe4f6d74e20370acb04ad889077d14d0f64a9c8ea6a42bc60cddf1e844699914 0.0s done
+#11 DONE 0.1s
+
+#12 [frontend frontend 1/3] FROM docker.io/library/nginx:stable-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951
+#12 resolve docker.io/library/nginx:stable-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951 0.0s done
+#12 DONE 0.1s
+
+#13 [backend dependencies 1/5] FROM docker.io/library/python:3.12.16-slim@sha256:962f801b08c870ac2a51b72bf02dae38c9a4162319e5e882ec244e198188d54e
+#13 resolve docker.io/library/python:3.12.16-slim@sha256:962f801b08c870ac2a51b72bf02dae38c9a4162319e5e882ec244e198188d54e 0.0s done
+#13 DONE 0.1s
+
+#14 [backend dependencies 3/5] COPY lab0/app/src/backend/requirements.lock ./requirements.lock
+#14 CACHED
+
+#15 [backend dependencies 4/5] RUN python -m venv /opt/venv
+#15 CACHED
+
+#16 [backend dependencies 5/5] RUN --mount=type=cache,target=/root/.cache/pip /opt/venv/bin/pip install -r requirements.lock
+#16 CACHED
+
+#17 [backend backend 4/5] COPY --from=dependencies /opt/venv /opt/venv
+#17 CACHED
+
+#18 [backend dependencies 2/5] WORKDIR /build
+#18 CACHED
+
+#19 [backend backend 2/5] WORKDIR /app
+#19 CACHED
+
+#20 [backend backend 3/5] RUN groupadd --system app && useradd --system --gid app --home-dir /app app
+#20 CACHED
+
+#21 [backend backend 5/5] COPY --chown=app:app lab0/app/src/backend/app ./app
+#21 CACHED
+
+#22 [backend] exporting to image
+#22 exporting layers done
+#22 exporting manifest sha256:8616f0a45e695a461780f04de9d93f070fa7399989c44b991b3da1af809c6562 done
+#22 exporting config sha256:ce4b5aa9e88e0a5300e804253b87d889aab2d907d1a26aebeea6d2ccb3cfdb98 done
+#22 exporting attestation manifest sha256:acca83c712f72f9ffe9eb548fdb9d0dfc4503926c1b53d9a7d0439d5fee2e070 0.0s done
+#22 exporting manifest list sha256:7f4be01902a166515734c30b55d3c7f9b59b0202655aef8451026b97c7443f84 0.0s done
+#22 naming to docker.io/idioma-labs/backend:lab2-good done
+#22 unpacking to docker.io/idioma-labs/backend:lab2-good done
+#22 DONE 0.1s
+
+#10 [frontend internal] load build context
+#10 transferring context: 15.74MB 0.1s done
+#10 DONE 0.2s
+
+#23 [frontend frontend-build 2/6] WORKDIR /build
+#23 CACHED
+
+#24 [frontend frontend-build 3/6] COPY lab0/app/src/frontend/package*.json ./
+#24 CACHED
+
+#25 [frontend frontend-build 4/6] RUN --mount=type=cache,target=/root/.npm npm ci --no-audit --no-fund
+#25 CACHED
+
+#26 [backend] resolving provenance for metadata file
+#26 DONE 0.0s
+
+#27 [frontend frontend-build 5/6] COPY lab0/app/src/frontend/ ./
+#27 DONE 0.1s
+
+#28 [frontend frontend-build 6/6] RUN npm run build
+#28 0.231 
+#28 0.231 > idioma-frontend@0.1.0 build
+#28 0.231 > vite build
+#28 0.231 
+#28 0.356 vite v6.4.2 building for production...
+#28 0.403 transforming...
+#28 1.294 ✓ 1994 modules transformed.
+#28 1.390 rendering chunks...
+#28 1.410 computing gzip size...
+#28 1.417 dist/index.html                                        1.00 kB │ gzip:  0.52 kB
+#28 1.417 dist/assets/04_icon_menu-BfBGbjK0.png                 14.74 kB
+#28 1.417 dist/assets/06_icon_arrow_right-Cv9VyjxW.png          15.45 kB
+#28 1.417 dist/assets/24_icon_growth_chart-B0h22nEs.png         18.73 kB
+#28 1.417 dist/assets/13_icon_network_nodes-D0V59mEv.png        19.83 kB
+#28 1.417 dist/assets/05_icon_close-RDADpVB3.png                19.93 kB
+#28 1.417 dist/assets/22_icon_document-6856cs1q.png             22.59 kB
+#28 1.417 dist/assets/01_icon_math_sigma-CukWCM0p.png           24.56 kB
+#28 1.417 dist/assets/03_icon_filter-cn-sHUv7.png               25.92 kB
+#28 1.417 dist/assets/16_icon_heart-B9stn1o2.png                25.94 kB
+#28 1.417 dist/assets/11_icon_bell-Dts-YrZH.png                 27.05 kB
+#28 1.418 dist/assets/13_icon_profile-CR726y4o.png              27.39 kB
+#28 1.418 dist/assets/04_icon_chemistry_flask-Dy2kROoI.png      27.73 kB
+#28 1.418 dist/assets/21_icon_settings-K6vC_RjR.png             28.06 kB
+#28 1.418 dist/assets/18_icon_toefl_certificate-DVkngl9-.png    28.80 kB
+#28 1.418 dist/assets/12_icon_gamepad-BjkHyjcb.png              29.22 kB
+#28 1.418 dist/assets/12_icon_chat-BPdTnymB.png                 29.43 kB
+#28 1.418 dist/assets/14_icon_robot_ai-BOzs-qx2.png             29.80 kB
+#28 1.418 dist/assets/07_icon_history_column-DbTvKL7U.png       29.98 kB
+#28 1.418 dist/assets/18_icon_play-BaGagX6K.png                 30.11 kB
+#28 1.418 dist/assets/09_icon_calendar-1qdUaRdf.png             30.30 kB
+#28 1.418 dist/assets/02_icon_search-jAjaX81I.png               30.43 kB
+#28 1.418 dist/assets/01_icon_home-61BcYw4f.png                 30.96 kB
+#28 1.418 dist/assets/17_icon_check-B9xpLFpj.png                31.25 kB
+#28 1.418 dist/assets/10_icon_terminal-C1YbW3Ve.png             31.96 kB
+#28 1.418 dist/assets/09_icon_programming_code-CjP8TdVk.png     32.56 kB
+#28 1.418 dist/assets/22_icon_certificate_ribbon-DlMGDkGe.png   32.73 kB
+#28 1.418 dist/assets/10_icon_clock-DwkDGFJI.png                33.14 kB
+#28 1.418 dist/assets/15_icon_ege_exam_sheet-BNSX7m0e.png       33.51 kB
+#28 1.418 dist/assets/23_icon_book-CpsTGjgW.png                 33.62 kB
+#28 1.418 dist/assets/11_icon_web_code_window-CSMDKlYi.png      34.50 kB
+#28 1.418 dist/assets/21_icon_dele_badge-Dey_zoP0.png           34.75 kB
+#28 1.418 dist/assets/15_icon_rating_stars-BY8SslHi.png         34.88 kB
+#28 1.418 dist/assets/24_icon_graduation_cap-DV4M8tzA.png       35.47 kB
+#28 1.418 dist/assets/02_icon_language_ab-Bal0l6ao.png          36.72 kB
+#28 1.418 dist/assets/06_icon_biology_dna-Blg1YjND.png          37.26 kB
+#28 1.418 dist/assets/05_icon_physics_atom-BsnD_aIO.png         39.66 kB
+#28 1.418 dist/assets/20_icon_japanese_sakura-Ch9gAZYW.png      42.62 kB
+#28 1.418 dist/assets/16_icon_oge_shield-CVz8NB9h.png           42.86 kB
+#28 1.418 dist/assets/23_icon_target_arrow-DT-TtJIm.png         42.92 kB
+#28 1.418 dist/assets/14_icon_group-CIy0vWrL.png                44.19 kB
+#28 1.418 dist/assets/17_icon_ielts_globe-DIa_7HFP.png          45.20 kB
+#28 1.418 dist/assets/08_icon_geography_globe-EGoIIV6x.png      45.89 kB
+#28 1.418 dist/assets/19_icon_hsk_chinese-CmImTYjQ.png          48.61 kB
+#28 1.418 dist/assets/03_icon_books_stack-Ds3wWPZH.png          53.08 kB
+#28 1.418 dist/assets/logo-BGPQL3Mx.png                        382.54 kB
+#28 1.418 dist/assets/03_panda_reading_book-Bzczs2PK.png       565.11 kB
+#28 1.418 dist/assets/05_panda_headset-YSY3O59I.png            693.34 kB
+#28 1.418 dist/assets/06_panda_certificate-Bj8CHwCj.png        744.18 kB
+#28 1.418 dist/assets/02_panda_laptop-Dcv5VZlt.png             754.67 kB
+#28 1.418 dist/assets/01_panda_waving-BYkxwfHL.png             757.20 kB
+#28 1.418 dist/assets/04_panda_pointing-BOIeYkc-.png           767.75 kB
+#28 1.418 dist/assets/07_panda_calendar-BQEeWej-.png           779.74 kB
+#28 1.418 dist/assets/08_panda_backpack-B0A-xpJa.png           799.34 kB
+#28 1.418 dist/assets/09_panda_teacher_board-BB59iODP.png      816.47 kB
+#28 1.418 dist/assets/reg_panda-oTmMtH90.png                   863.48 kB
+#28 1.418 dist/assets/10_panda_trophy-CWkDg-8N.png             931.24 kB
+#28 1.418 dist/assets/index-CNZ897B8.css                        76.28 kB │ gzip: 14.37 kB
+#28 1.418 dist/assets/index-BdKXp9Zp.js                        324.91 kB │ gzip: 94.02 kB
+#28 1.418 ✓ built in 1.04s
+#28 1.472 npm notice
+#28 1.472 npm notice New major version of npm available! 10.9.9 -> 12.2.1
+#28 1.472 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+#28 1.472 npm notice To update run: npm install -g npm@12.2.1
+#28 1.472 npm notice
+#28 DONE 1.5s
+
+#29 [frontend frontend 2/3] COPY --from=frontend-build /build/dist /usr/share/nginx/html
+#29 CACHED
+
+#30 [frontend frontend 3/3] COPY lab2/nginx.conf /etc/nginx/nginx.conf
+#30 DONE 0.0s
+
+#31 [frontend] exporting to image
+#31 exporting layers 0.0s done
+#31 exporting manifest sha256:a5b6f4048f3374888172f868a81dbd2966d1afda1b9b9b404d4aba484eefb2fe done
+#31 exporting config sha256:6fd8de1a8442d650993a8e53fa9c667125f7213f6624b63aa3fde04e22caf54e done
+#31 exporting attestation manifest sha256:420cbdc8a7857d66ff142b25de9cb5a8bab023bee457ec7cce25c89fb3349e54 done
+#31 exporting manifest list sha256:97ac73d3c11640dc68ae8415ff3498d261a87abb892330d0b6e83fe7ded202bf done
+#31 naming to docker.io/idioma-labs/frontend:lab2-good done
+#31 unpacking to docker.io/idioma-labs/frontend:lab2-good done
+#31 DONE 0.0s
+
+#32 [frontend] resolving provenance for metadata file
+#32 DONE 0.0s
+ Image idioma-labs/frontend:lab2-good Built 
+ Image idioma-labs/backend:lab2-good Built 
+ Container idioma-lab2-backend-1 Running 
+ Container idioma-lab2-db-1 Running 
+ Container idioma-lab2-frontend-1 Recreate 
+ Container idioma-lab2-frontend-1 Recreated 
+ Container idioma-lab2-db-1 Waiting 
+ Container idioma-lab2-db-1 Healthy 
+ Container idioma-lab2-backend-1 Waiting 
+ Container idioma-lab2-backend-1 Healthy 
+ Container idioma-lab2-frontend-1 Starting 
+ Container idioma-lab2-frontend-1 Started 
+ Container idioma-lab2-frontend-1 Waiting 
+ Container idioma-lab2-db-1 Waiting 
+ Container idioma-lab2-backend-1 Waiting 
+ Container idioma-lab2-db-1 Healthy 
+ Container idioma-lab2-backend-1 Healthy 
+ Container idioma-lab2-frontend-1 Healthy 

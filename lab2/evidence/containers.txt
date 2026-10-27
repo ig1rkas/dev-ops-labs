@@ -1,0 +1,4 @@
+NAME                     IMAGE                                                                     COMMAND                  SERVICE    CREATED          STATUS                    PORTS
+idioma-lab2-backend-1    sha256:0d702e364f61d07c4ff6d0d64a2bce15c9009c9150f15e1de737d2cf417f4fbc   "uvicorn app.main:ap…"   backend    11 minutes ago   Up 11 minutes (healthy)   8000/tcp
+idioma-lab2-db-1         postgres:16.15-bookworm                                                   "docker-entrypoint.s…"   db         18 seconds ago   Up 10 seconds (healthy)   5432/tcp
+idioma-lab2-frontend-1   idioma-labs/frontend:lab2-good                                            "/docker-entrypoint.…"   frontend   6 minutes ago    Up 6 minutes (healthy)    127.0.0.1:8082->8080/tcp

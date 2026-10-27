@@ -1,0 +1,4 @@
+PASS bad image runs the same FastAPI service
+PASS readiness checks real PostgreSQL: {'status': 'ready', 'instance': 'backend'}
+PASS catalog reads PostgreSQL, subjects: 21
+whoami: root

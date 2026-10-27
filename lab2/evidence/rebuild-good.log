@@ -1,0 +1,61 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.good
+#1 DONE 0.0s
+
+#1 [internal] load build definition from Dockerfile.good
+#1 transferring dockerfile: 1.87kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.2s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#3 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/python:3.12.16-slim@sha256:962f801b08c870ac2a51b72bf02dae38c9a4162319e5e882ec244e198188d54e
+#4 DONE 0.0s
+
+#5 [dependencies 1/5] FROM docker.io/library/python:3.12.16-slim@sha256:962f801b08c870ac2a51b72bf02dae38c9a4162319e5e882ec244e198188d54e
+#5 resolve docker.io/library/python:3.12.16-slim@sha256:962f801b08c870ac2a51b72bf02dae38c9a4162319e5e882ec244e198188d54e done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 3.80kB done
+#6 DONE 0.0s
+
+#7 [dependencies 5/5] RUN --mount=type=cache,target=/root/.cache/pip /opt/venv/bin/pip install -r requirements.lock
+#7 CACHED
+
+#8 [dependencies 4/5] RUN python -m venv /opt/venv
+#8 CACHED
+
+#9 [backend 4/5] COPY --from=dependencies /opt/venv /opt/venv
+#9 CACHED
+
+#10 [dependencies 3/5] COPY lab0/app/src/backend/requirements.lock ./requirements.lock
+#10 CACHED
+
+#11 [backend 2/5] WORKDIR /app
+#11 CACHED
+
+#12 [backend 3/5] RUN groupadd --system app && useradd --system --gid app --home-dir /app app
+#12 CACHED
+
+#13 [dependencies 2/5] WORKDIR /build
+#13 CACHED
+
+#14 [backend 5/5] COPY --chown=app:app lab0/app/src/backend/app ./app
+#14 CACHED
+
+#15 exporting to image
+#15 exporting layers done
+#15 exporting manifest sha256:9752970b78a6dc71d8da21240609d6c8acdf38e98aebf3719796a588d2658a9a done
+#15 exporting config sha256:bb3b9a06fb144f7e7506db68154d55efcd2d372a989746a74c2b4d58c4e10ca3 0.0s done
+#15 exporting attestation manifest sha256:19db6a6b22bbf7b443122ac70dc99fb284d3284c9d835f0bb52575244418162b 0.0s done
+#15 exporting manifest list sha256:f0d8770aa5f4ec31a943158a2d976f3b5c641e5106ab63ffdc5449860a05145c
+#15 exporting manifest list sha256:f0d8770aa5f4ec31a943158a2d976f3b5c641e5106ab63ffdc5449860a05145c 0.0s done
+#15 naming to docker.io/idioma-labs/backend:good-benchmark done
+#15 unpacking to docker.io/idioma-labs/backend:good-benchmark 0.0s done
+#15 DONE 0.1s

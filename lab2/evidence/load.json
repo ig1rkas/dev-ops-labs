@@ -1,0 +1,30 @@
+{
+  "requests": 240,
+  "successful": 240,
+  "seconds": 1.542,
+  "backend_memory_limit": "512MiB",
+  "backend_cpus": 0.5,
+  "cpu_before": {
+    "usage_usec": 21717136,
+    "user_usec": 19500750,
+    "system_usec": 2216385,
+    "nice_usec": 0,
+    "nr_periods": 2392,
+    "nr_throttled": 294,
+    "throttled_usec": 12974984,
+    "nr_bursts": 0,
+    "burst_usec": 0
+  },
+  "cpu_after": {
+    "usage_usec": 22182021,
+    "user_usec": 19800556,
+    "system_usec": 2381464,
+    "nice_usec": 0,
+    "nr_periods": 2404,
+    "nr_throttled": 303,
+    "throttled_usec": 14171945,
+    "nr_bursts": 0,
+    "burst_usec": 0
+  },
+  "throttled_periods_delta": 9
+}

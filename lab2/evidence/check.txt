@@ -1,0 +1,17 @@
+Started: 2026-10-27T09:52:10.036744+00:00
+PASS backend user=app, frontend user=nginx
+Saved user: persistence-d5747beccd894576b573e99d9bf66d50@example.org id= 4
+Removing/recreating the database container, keeping its named volume...
+ Container idioma-lab2-db-1 Recreate 
+ Container idioma-lab2-db-1 Recreated 
+ Container idioma-lab2-db-1 Starting 
+ Container idioma-lab2-db-1 Started 
+ Container idioma-lab2-db-1 Waiting 
+ Container idioma-lab2-db-1 Healthy 
+PASS database container changed: d1c63f9296fc -> b7d5ba5c95fe
+PASS the user and auth token survived in the named volume
+frontend -> db:5432 exit= 1 nc: bad address 'db'
+PASS backend -> db, users= 4
+PASS direct TCP isolation: frontend -> 172.23.0.2:5432 exit= 1
+PASS network membership proves frontend and database share no network
+All Docker stack checks passed

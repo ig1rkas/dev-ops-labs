@@ -1,0 +1,22 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><title>Лабораторная 2 — Compose и сохранение данных</title><style>body{margin:40px;font:18px/1.5 system-ui;color:#172033;background:#fff}h1{font-size:30px}h2{font-size:22px;margin:28px 0 4px}pre{font:15px/1.6 ui-monospace,monospace;background:#f4f6f8;padding:20px;white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid #ddd}.hash{font:12px monospace;color:#546075}header p{font-size:15px;color:#546075}</style><header><h1>Лабораторная 2 — Compose и сохранение данных</h1><p>Снимок сохранённого фактического вывода команд. Оригинальные TXT-файлы находятся рядом с изображением.</p></header><h2>containers.txt</h2><p class="hash">SHA-256 9c4733d0cc6d7b27f7e79ac6306334d4f26f85940b81a17ce6b86f4e6678ac87</p><pre>NAME                     IMAGE                                                                     COMMAND                  SERVICE    CREATED          STATUS                    PORTS
+idioma-lab2-backend-1    sha256:0d702e364f61d07c4ff6d0d64a2bce15c9009c9150f15e1de737d2cf417f4fbc   "uvicorn app.main:ap…"   backend    11 minutes ago   Up 11 minutes (healthy)   8000/tcp
+idioma-lab2-db-1         postgres:16.15-bookworm                                                   "docker-entrypoint.s…"   db         18 seconds ago   Up 10 seconds (healthy)   5432/tcp
+idioma-lab2-frontend-1   idioma-labs/frontend:lab2-good                                            "/docker-entrypoint.…"   frontend   6 minutes ago    Up 6 minutes (healthy)    127.0.0.1:8082-&gt;8080/tcp
+</pre><h2>check.txt</h2><p class="hash">SHA-256 d12a50cfdf6c84f75d9581ce00eef8402844e808c8823127409ce85490a35be2</p><pre>Started: 2026-10-27T09:52:10.036744+00:00
+PASS backend user=app, frontend user=nginx
+Saved user: persistence-d5747beccd894576b573e99d9bf66d50@example.org id= 4
+Removing/recreating the database container, keeping its named volume...
+ Container idioma-lab2-db-1 Recreate 
+ Container idioma-lab2-db-1 Recreated 
+ Container idioma-lab2-db-1 Starting 
+ Container idioma-lab2-db-1 Started 
+ Container idioma-lab2-db-1 Waiting 
+ Container idioma-lab2-db-1 Healthy 
+PASS database container changed: d1c63f9296fc -&gt; b7d5ba5c95fe
+PASS the user and auth token survived in the named volume
+frontend -&gt; db:5432 exit= 1 nc: bad address 'db'
+PASS backend -&gt; db, users= 4
+PASS direct TCP isolation: frontend -&gt; 172.23.0.2:5432 exit= 1
+PASS network membership proves frontend and database share no network
+All Docker stack checks passed
+</pre></html>

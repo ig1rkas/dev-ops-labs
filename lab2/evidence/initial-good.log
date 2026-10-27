@@ -1,0 +1,58 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.good
+#1 transferring dockerfile: 1.87kB done
+#1 DONE 0.0s
+
+#2 resolve image config for docker-image://docker.io/docker/dockerfile:1
+#2 DONE 0.9s
+
+#3 docker-image://docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e
+#3 resolve docker.io/docker/dockerfile:1@sha256:4edf897a3ffa55b89f906fc8cc78afdb3f1834cc9c7083565e611a8a7d5fe99e done
+#3 CACHED
+
+#4 [internal] load metadata for docker.io/library/python:3.12.16-slim@sha256:962f801b08c870ac2a51b72bf02dae38c9a4162319e5e882ec244e198188d54e
+#4 DONE 0.0s
+
+#5 [dependencies 1/5] FROM docker.io/library/python:3.12.16-slim@sha256:962f801b08c870ac2a51b72bf02dae38c9a4162319e5e882ec244e198188d54e
+#5 resolve docker.io/library/python:3.12.16-slim@sha256:962f801b08c870ac2a51b72bf02dae38c9a4162319e5e882ec244e198188d54e done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 3.80kB done
+#6 DONE 0.0s
+
+#7 [backend 2/5] WORKDIR /app
+#7 CACHED
+
+#8 [backend 3/5] RUN groupadd --system app && useradd --system --gid app --home-dir /app app
+#8 CACHED
+
+#9 [dependencies 2/5] WORKDIR /build
+#9 CACHED
+
+#10 [dependencies 3/5] COPY lab0/app/src/backend/requirements.lock ./requirements.lock
+#10 CACHED
+
+#11 [dependencies 4/5] RUN python -m venv /opt/venv
+#11 CACHED
+
+#12 [dependencies 5/5] RUN --mount=type=cache,target=/root/.cache/pip /opt/venv/bin/pip install -r requirements.lock
+#12 CACHED
+
+#13 [backend 4/5] COPY --from=dependencies /opt/venv /opt/venv
+#13 CACHED
+
+#14 [backend 5/5] COPY --chown=app:app lab0/app/src/backend/app ./app
+#14 CACHED
+
+#15 exporting to image
+#15 exporting layers
+#15 exporting layers done
+#15 exporting manifest sha256:25bd1d5d964f85e91cbc634dd2f0d76bf95a7a87c71ea6c9b30db5c0bf691f70 0.0s done
+#15 exporting config sha256:49e50c2d3c79345857cec57ddf265061da02ecdeddea6a0cb96a2093e471d57e 0.0s done
+#15 exporting attestation manifest sha256:c3fc43e82a1b84806d9d37651bd73076a50589b6ff2110793b1aecf2cc4f64fb done
+#15 exporting manifest list sha256:559f7a819942ad376a44142d9faca6721985dc8b11fd83ce88af02e9207ef109 done
+#15 naming to docker.io/idioma-labs/backend:good-benchmark done
+#15 unpacking to docker.io/idioma-labs/backend:good-benchmark 0.0s done
+#15 DONE 0.1s

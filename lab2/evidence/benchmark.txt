@@ -1,0 +1,36 @@
+Building initial bad
+Building initial good
+Building rebuild bad
+Building rebuild good
+{
+  "started_at": "2026-10-27T09:47:46.122114+00:00",
+  "architecture": "aarch64",
+  "initial_bad": {
+    "seconds": 19.916,
+    "bytes": 1931276633,
+    "image": "idioma-labs/backend:bad-benchmark",
+    "image_id": "sha256:39e25f8a3d8bd4900dbd8c7bd923dacf85dde14471b98699abe7a450c6aa3fdd",
+    "user": "root (default)"
+  },
+  "initial_good": {
+    "seconds": 1.207,
+    "bytes": 427118640,
+    "image": "idioma-labs/backend:good-benchmark",
+    "image_id": "sha256:559f7a819942ad376a44142d9faca6721985dc8b11fd83ce88af02e9207ef109",
+    "user": "app"
+  },
+  "rebuild_bad": {
+    "seconds": 19.134,
+    "bytes": 1931276793,
+    "image": "idioma-labs/backend:bad-benchmark",
+    "image_id": "sha256:95405d237aa6ea8ffc8c76a8faee21af3f2916d2105d5e6846033584317ea990",
+    "user": "root (default)"
+  },
+  "rebuild_good": {
+    "seconds": 0.552,
+    "bytes": 427118689,
+    "image": "idioma-labs/backend:good-benchmark",
+    "image_id": "sha256:f0d8770aa5f4ec31a943158a2d976f3b5c641e5106ab63ffdc5449860a05145c",
+    "user": "app"
+  }
+}

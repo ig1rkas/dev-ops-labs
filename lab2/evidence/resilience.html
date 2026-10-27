@@ -1,0 +1,9 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><title>Лабораторная 2 — восстановление и лимиты</title><style>body{margin:40px;font:18px/1.5 system-ui;color:#172033;background:#fff}h1{font-size:30px}h2{font-size:22px;margin:28px 0 4px}pre{font:15px/1.6 ui-monospace,monospace;background:#f4f6f8;padding:20px;white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid #ddd}.hash{font:12px monospace;color:#546075}header p{font-size:15px;color:#546075}</style><header><h1>Лабораторная 2 — восстановление и лимиты</h1><p>Снимок сохранённого фактического вывода команд. Оригинальные TXT-файлы находятся рядом с изображением.</p></header><h2>resilience.txt</h2><p class="hash">SHA-256 105d41490a429af8e90b575cdc6906b4d777c12f5ed7362eef4343b473deeb99</p><pre>Started: 2026-10-27T09:52:17.494248+00:00
+Requesting immediate PostgreSQL process shutdown inside its container...
+waiting for server to shut down....PASS same DB container restarted automatically: 0 -&gt; 1
+PASS backend reconnected: {'status': 'ready', 'instance': 'lab2-backend'}
+PASS overly tight limit: actual backend OOMKilled=true, exit=137, memory=40MiB, cpu=0.1
+PASS tuned limits hold real API load: {"requests": 240, "successful": 240, "seconds": 1.542, "backend_memory_limit": "512MiB", "backend_cpus": 0.5, "cpu_before": {"usage_usec": 21717136, "user_usec": 19500750, "system_usec": 2216385, "nice_usec": 0, "nr_periods": 2392, "nr_throttled": 294, "throttled_usec": 12974984, "nr_bursts": 0, "burst_usec": 0}, "cpu_after": {"usage_usec": 22182021, "user_usec": 19800556, "system_usec": 2381464, "nice_usec": 0, "nr_periods": 2404, "nr_throttled": 303, "throttled_usec": 14171945, "nr_bursts": 0, "burst_usec": 0}, "throttled_periods_delta": 9}
+All resilience checks passed
+</pre><h2>stats.txt</h2><p class="hash">SHA-256 776c17e0e43496cf4fda46a85b33ea7d6cf4d46bbd259b6242cea341be536ddd</p><pre>idioma-lab2-backend-1 CPU=17.99% MEM=256.6MiB / 512MiB
+</pre></html>
