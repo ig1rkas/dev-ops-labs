@@ -1,0 +1,14 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><title>Лабораторная 0 — контейнеры и PostgreSQL</title><style>body{margin:40px;font:18px/1.5 system-ui;color:#172033;background:#fff}h1{font-size:30px}h2{font-size:22px;margin:28px 0 4px}pre{font:15px/1.6 ui-monospace,monospace;background:#f4f6f8;padding:20px;white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid #ddd}.hash{font:12px monospace;color:#546075}header p{font-size:15px;color:#546075}</style><header><h1>Лабораторная 0 — контейнеры и PostgreSQL</h1><p>Снимок сохранённого фактического вывода команд. Оригинальные TXT-файлы находятся рядом с изображением.</p></header><h2>containers.txt</h2><p class="hash">SHA-256 3d6a00a63419fcba08b8ef7b9752e39aea17a73c3bc85b81795d057d0ee65e2a</p><pre>NAME                     IMAGE                       COMMAND                  SERVICE    CREATED          STATUS                    PORTS
+idioma-lab0-backend-1    idioma-labs/backend:lab0    "uvicorn app.main:ap…"   backend    44 seconds ago   Up 40 seconds (healthy)   127.0.0.1:18000-&gt;8000/tcp
+idioma-lab0-db-1         postgres:16.15-bookworm     "docker-entrypoint.s…"   db         44 seconds ago   Up 44 seconds (healthy)   5432/tcp
+idioma-lab0-frontend-1   idioma-labs/frontend:lab0   "/docker-entrypoint.…"   frontend   44 seconds ago   Up 35 seconds             127.0.0.1:8080-&gt;80/tcp
+</pre><h2>database.txt</h2><p class="hash">SHA-256 706f7fe9475cd3d889c7231743f9d211649deaf6d50639af572776d9d2d15add</p><pre> id |                      email                       |      full_name       |  role   
+----+--------------------------------------------------+----------------------+---------
+  2 | lab-93619e4ac8c4458dafdd029684c927ec@example.org | Лабораторный студент | student
+  1 | admin@example.org                                | Администратор idioma | admin
+(2 rows)
+
+</pre><h2>browser-check.txt</h2><p class="hash">SHA-256 22beb70cb92a0e732bc5fa8c1be2600a0fabb4aafd916252d18b2cd677b8c960</p><pre>PASS browser registration: browser-1793094339702@example.org user id: 3
+PASS full page reload reads the same user from the API: 3 browser-1793094339702@example.org
+PASS no browser JavaScript errors
+</pre></html>

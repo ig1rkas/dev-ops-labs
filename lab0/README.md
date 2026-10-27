@@ -71,3 +71,7 @@ docker compose down
 Скрипт [browser-check.mjs](browser-check.mjs) воспроизводит этот сценарий с
 Playwright: заполнение формы, HTTP 201 и получение того же пользователя через
 `GET /api/auth/me` после полной перезагрузки `/dashboard`.
+
+Снимок сохранённого фактического вывода контейнеров и SQL-запроса:
+
+![Контейнеры и запись в PostgreSQL](evidence/containers.png)
